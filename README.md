@@ -2,7 +2,7 @@
 <div align="center">
 
 <a href="https://github.com/roydonsequeira">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=36&duration=3000&pause=1000&color=FF9800&center=true&vCenter=true&multiline=true&width=700&height=80&lines=GenAI+Engineer;AI+Agent+Builder;LLM+%26+RAG+Architect;Healthcare+AI+Specialist" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=36&duration=2800&pause=900&color=FF9800&center=true&vCenter=true&width=600&height=60&lines=GenAI+Engineer;AI+Agent+Builder;LLM+%26+RAG+Architect;Healthcare+AI+Specialist" alt="Typing SVG" />
 </a>
 
 <br/>
@@ -14,8 +14,8 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-roydon--sequeira-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydon-sequeira/)
 [![GitHub](https://img.shields.io/badge/GitHub-roydonsequeira-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/roydonsequeira)
 [![X](https://img.shields.io/badge/X-@roydonsequeiraa-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/roydonsequeiraa)
-[![Email](https://img.shields.io/badge/Email-roydnsequeira@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:roydnsequeira@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Website-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/roydonsequeira/roy-website)
+[![Email](https://img.shields.io/badge/Email-Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:roydnsequeira@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-roydonsequeira.com-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://roydonsequeira.com)
 
 </div>
 
@@ -173,7 +173,7 @@ If you're building something that needs production-grade AI — let's talk.
 [![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydon-sequeira/)
 [![Email](https://img.shields.io/badge/Send_an_Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:roydnsequeira@gmail.com)
 [![X](https://img.shields.io/badge/Follow_on_X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/roydonsequeiraa)
-[![Portfolio](https://img.shields.io/badge/View_Portfolio-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/roydonsequeira/roy-website)
+[![Portfolio](https://img.shields.io/badge/View_Portfolio-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://roydonsequeira.com)
 
 </div>
 
