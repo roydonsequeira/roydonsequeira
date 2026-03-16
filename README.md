@@ -23,7 +23,7 @@
 
 ## About Me
 
-AI & Machine Learning Engineer with **20+ months of professional experience** building production-grade Generative AI systems. At **ReinHealth.ai**, I designed and shipped autonomous medical AI agents, RAG pipelines, and clinical workflow automation used in real-world healthcare environments.
+AI & Machine Learning Engineer with **2 years of professional experience** building production-grade Generative AI systems. At **ReinHealth.ai**, I designed and shipped autonomous medical AI agents, RAG pipelines, and clinical workflow automation used in real-world healthcare environments.
 
 I specialize in turning LLMs into reliable, tool-using agents that solve real problems — not just demos.
 
