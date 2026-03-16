@@ -23,11 +23,11 @@
 
 ## About Me
 
-AI & Machine Learning Engineer specializing in **Generative AI**, with **2 years of professional experience** building autonomous AI agents, RAG systems, and intelligent automation platforms.
+AI & Machine Learning Engineer specializing in **Generative AI systems**, with **2 years of professional experience** building autonomous AI agents, Retrieval-Augmented Generation (RAG) systems, and intelligent automation platforms.
 
-At **ReinHealth.ai**, I designed and shipped production-grade medical AI agents, RAG pipelines, and clinical workflow automation deployed in real-world healthcare environments — where accuracy and reliability are non-negotiable.
+At **ReinHealth.ai**, I designed and deployed production-grade medical AI agents, RAG pipelines, and clinical workflow automation systems used in real-world healthcare environments where accuracy, reliability, and data integrity are critical.
 
-I specialize in turning LLMs into reliable, tool-using agents that solve real problems — not just demos. My work connects large language models, vector retrieval, backend infrastructure, and workflow automation into systems that actually work at scale.
+My work focuses on building LLM-powered systems that combine reasoning, tool usage, vector retrieval, backend infrastructure, and workflow orchestration to solve practical problems at scale.
 
 ---
 
