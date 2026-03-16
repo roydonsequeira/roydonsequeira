@@ -23,13 +23,11 @@
 
 ## About Me
 
-AI & Machine Learning Engineer with **2 years of professional experience** building production-grade Generative AI systems. At **ReinHealth.ai**, I designed and shipped autonomous medical AI agents, RAG pipelines, and clinical workflow automation used in real-world healthcare environments.
+AI & Machine Learning Engineer specializing in **Generative AI**, with **2 years of professional experience** building autonomous AI agents, RAG systems, and intelligent automation platforms.
 
-I specialize in turning LLMs into reliable, tool-using agents that solve real problems — not just demos.
+At **ReinHealth.ai**, I designed and shipped production-grade medical AI agents, RAG pipelines, and clinical workflow automation deployed in real-world healthcare environments — where accuracy and reliability are non-negotiable.
 
-- Based in **Udupi, India**
-- B.E. in **AI & Machine Learning** — NMAM Institute of Technology (2020–2024)
-- Currently pursuing **Executive PG in Data Science & AI** — IIT Roorkee
+I specialize in turning LLMs into reliable, tool-using agents that solve real problems — not just demos. My work connects large language models, vector retrieval, backend infrastructure, and workflow automation into systems that actually work at scale.
 
 ---
 
