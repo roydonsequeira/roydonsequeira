@@ -11,9 +11,9 @@
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-roydon--sequeira-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydon-sequeira/)
-[![GitHub](https://img.shields.io/badge/GitHub-roydonsequeira-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/roydonsequeira)
-[![X](https://img.shields.io/badge/X-@roydonsequeiraa-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/roydonsequeiraa)
+[![LinkedIn](https://img.shields.io/badge/roydon--sequeira-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydon-sequeira/)
+[![GitHub](https://img.shields.io/badge/roydonsequeira-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/roydonsequeira)
+[![X](https://img.shields.io/badge/%40roydonsequeiraa-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/roydonsequeiraa)
 [![Email](https://img.shields.io/badge/roydnsequeira%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
 [![Portfolio](https://img.shields.io/badge/Portfolio-roydonsequeira.com-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://roydonsequeira.com)
 
@@ -168,10 +168,10 @@ If you're building something that needs production-grade AI — let's talk.
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydon-sequeira/)
+[![LinkedIn](https://img.shields.io/badge/roydon--sequeira-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydon-sequeira/)
 [![Email](https://img.shields.io/badge/roydnsequeira%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
-[![X](https://img.shields.io/badge/Follow_on_X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/roydonsequeiraa)
-[![Portfolio](https://img.shields.io/badge/View_Portfolio-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://roydonsequeira.com)
+[![X](https://img.shields.io/badge/%40roydonsequeiraa-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/roydonsequeiraa)
+[![Portfolio](https://img.shields.io/badge/roydonsequeira.com-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://roydonsequeira.com)
 
 </div>
 
