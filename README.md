@@ -82,22 +82,6 @@ My work focuses on building LLM-powered systems that combine reasoning, tool usa
 
 ---
 
-## GitHub Stats
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=roydonsequeira&show_icons=true&theme=dark&bg_color=0d1117&title_color=ff9800&icon_color=ff9800&text_color=c9d1d9&border_color=30363d&hide_border=false&count_private=true" alt="GitHub Stats" height="180" />
-&nbsp;&nbsp;
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=roydonsequeira&theme=dark&background=0d1117&ring=ff9800&fire=ff9800&currStreakLabel=ff9800&sideLabels=c9d1d9&border=30363d" alt="GitHub Streak" height="180" />
-
-<br/><br/>
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=roydonsequeira&layout=compact&theme=dark&bg_color=0d1117&title_color=ff9800&text_color=c9d1d9&border_color=30363d&hide_border=false&langs_count=8" alt="Top Languages" height="180" />
-
-</div>
-
----
-
 ## Featured Projects
 
 ### Areya — Advanced Medical AI Agent
