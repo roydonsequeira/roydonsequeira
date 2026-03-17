@@ -11,11 +11,11 @@
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydon-sequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydon-sequeira/)
-[![GitHub](https://img.shields.io/badge/roydonsequeira-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/roydonsequeira)
-[![X](https://img.shields.io/badge/%40roydonsequeiraa-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/roydonsequeiraa)
-[![Email](https://img.shields.io/badge/roydnsequeira%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
-[![Portfolio](https://img.shields.io/badge/roydonsequeira.com-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://roydonsequeira.com)
+[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydon-sequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2)](https://www.linkedin.com/in/roydon-sequeira/)
+[![GitHub](https://img.shields.io/static/v1?label=&message=roydonsequeira&color=181717&style=for-the-badge&logo=github&logoColor=white&labelColor=181717)](https://github.com/roydonsequeira)
+[![X](https://img.shields.io/static/v1?label=&message=%40roydonsequeiraa&color=000000&style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/roydonsequeiraa)
+[![Email](https://img.shields.io/static/v1?label=&message=roydnsequeira%40gmail.com&color=EA4335&style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
+[![Portfolio](https://img.shields.io/static/v1?label=&message=roydonsequeira.com&color=FF9800&style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=FF9800)](https://roydonsequeira.com)
 
 </div>
 
@@ -168,10 +168,10 @@ If you're building something that needs production-grade AI — let's talk.
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydon-sequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydon-sequeira/)
-[![Email](https://img.shields.io/badge/roydnsequeira%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
-[![X](https://img.shields.io/badge/%40roydonsequeiraa-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/roydonsequeiraa)
-[![Portfolio](https://img.shields.io/badge/roydonsequeira.com-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://roydonsequeira.com)
+[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydon-sequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2)](https://www.linkedin.com/in/roydon-sequeira/)
+[![Email](https://img.shields.io/static/v1?label=&message=roydnsequeira%40gmail.com&color=EA4335&style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
+[![X](https://img.shields.io/static/v1?label=&message=%40roydonsequeiraa&color=000000&style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/roydonsequeiraa)
+[![Portfolio](https://img.shields.io/static/v1?label=&message=roydonsequeira.com&color=FF9800&style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=FF9800)](https://roydonsequeira.com)
 
 </div>
 
