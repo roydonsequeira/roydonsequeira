@@ -80,17 +80,6 @@ Reasoning stays in the orchestrator. Retrieval and tool calls are isolated so fa
 
 ---
 
-### ADILA — WhatsApp Umrah Visa Automation
-> A WhatsApp-native automation platform that handles Umrah visa workflows end to end.
-
-`n8n` `WhatsApp API` `LLM Chains`
-
-- Conversational intake and document collection over WhatsApp
-- Automated visa processing workflow with status tracking
-- **Domain:** Travel & Immigration Automation
-
----
-
 ### Clinical Automation Workflows (n8n)
 > Production automation suite for clinical operations — appointments, notes, and documentation.
 
