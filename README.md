@@ -8,7 +8,7 @@
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydon-sequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2)](https://www.linkedin.com/in/roydon-sequeira/)
+[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydonsequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2)](https://www.linkedin.com/in/roydonsequeira/)
 [![GitHub](https://img.shields.io/static/v1?label=&message=roydonsequeira&color=181717&style=for-the-badge&logo=github&logoColor=white&labelColor=181717)](https://github.com/roydonsequeira)
 [![X](https://img.shields.io/static/v1?label=&message=%40roydonsequeiraa&color=000000&style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/roydonsequeiraa)
 [![Email](https://img.shields.io/static/v1?label=&message=roydnsequeira%40gmail.com&color=EA4335&style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
@@ -166,7 +166,7 @@ Built image classification models using CNNs, AlexNet, and MLP architectures on 
 **Open to work on AI Engineering, GenAI, LLM systems, and healthcare AI.**
 Building something that needs production-grade AI? Let's talk.
 
-[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydon-sequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2)](https://www.linkedin.com/in/roydon-sequeira/)
+[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydonsequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2)](https://www.linkedin.com/in/roydonsequeira/)
 [![Email](https://img.shields.io/static/v1?label=&message=roydnsequeira%40gmail.com&color=EA4335&style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
 [![X](https://img.shields.io/static/v1?label=&message=%40roydonsequeiraa&color=000000&style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/roydonsequeiraa)
 [![Portfolio](https://img.shields.io/static/v1?label=&message=roydonsequeira.com&color=FF9800&style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=FF9800)](https://roydonsequeira.com)
