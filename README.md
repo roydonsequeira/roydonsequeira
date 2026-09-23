@@ -1,110 +1,146 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:FF9800,100:0D1117&height=200&section=header&text=Roydon%20Sequeira&fontSize=56&fontColor=ffffff&animation=twinkling&fontAlignY=42" width="100%" alt="Roydon Sequeira" />
+# Roydon Sequeira
 
-<a href="https://github.com/roydonsequeira">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=2600&pause=800&color=FF9800&center=true&vCenter=true&width=680&height=50&lines=GenAI+Engineer;AI+Agent+Architect;LLM+%26+RAG+Systems+Engineer;Healthcare+AI+Specialist;Open-Source+Tooling+Builder" alt="GenAI Engineer | AI Agent Architect | LLM and RAG Systems Engineer | Healthcare AI Specialist | Open-Source Tooling Builder" />
-</a>
+### GenAI Engineer · AI Agent Architect · LLM Systems Builder
 
-<br />
+I design and ship production AI systems that reason, retrieve, use tools, and know when to escalate.
 
-<a href="https://www.linkedin.com/in/roydonsequeira/"><img src="https://img.shields.io/static/v1?label=&message=LinkedIn&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2" alt="LinkedIn" /></a>
-<a href="https://github.com/roydonsequeira"><img src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&style=for-the-badge&logo=github&logoColor=white&labelColor=181717" alt="GitHub" /></a>
-<a href="https://x.com/roydonsequeiraa"><img src="https://img.shields.io/static/v1?label=&message=X&color=000000&style=for-the-badge&logo=x&logoColor=white&labelColor=000000" alt="X" /></a>
-<a href="mailto:roydnsequeira@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=Email&color=EA4335&style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335" alt="Email" /></a>
-<a href="https://roydonsequeira.com"><img src="https://img.shields.io/static/v1?label=&message=Portfolio&color=FF9800&style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=FF9800" alt="Portfolio" /></a>
+[![Portfolio](https://img.shields.io/badge/Portfolio-roydonsequeira.com-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://roydonsequeira.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-roydonsequeira-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydonsequeira/)
+[![GitHub](https://img.shields.io/badge/GitHub-roydonsequeira-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/roydonsequeira)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:roydnsequeira@gmail.com)
 
 </div>
 
-<br />
-
-## Profile
-
-I am a **GenAI engineer and AI agent architect based in Udupi, India**, with around two years of experience shipping production AI systems.
-
-My focus is autonomous agents, LLM orchestration, Retrieval-Augmented Generation (RAG), memory architectures, and healthcare-grade automation. I build systems that can reason, retrieve, use tools, validate their output, and remain observable under real load - not just in a demo.
+## At A Glance
 
 ```text
-Current focus:   Agent orchestration, memory, RAG, and reliable LLM backends
-Experience:      ReinHealth.ai (2024-2026) + freelance and contract work
-Open to:         AI engineering roles, contracts, and production AI projects
+Based in       Udupi, Karnataka, India
+Specialty      Autonomous agents, LLM orchestration, RAG, healthcare AI
+Core stack     Python, LangChain, Qdrant, FastAPI, Docker
+Experience     2+ years building and deploying production AI systems
+Availability   AI engineering roles, contracts, and focused AI projects
 ```
 
-## How I Build Agents
+I am an AI Agent Developer at **Code Crew Studio** and also take on freelance and contract work. Previously, I was a GenAI Engineer at **ReinHealth.ai**, a stealth healthcare startup, where I helped deliver production medical AI agents and clinical automation.
 
-```mermaid
-flowchart LR
-    U["User / Trigger"] --> O["Agent Orchestrator"]
-    O --> MEM[("Memory Store")]
-    O --> RAG["RAG Retrieval"]
-    O --> TOOL["Tool Calls"]
-    RAG --> VDB[("Vector DB - Qdrant / Chroma")]
-    TOOL --> EXT["External APIs / DBs"]
-    O --> CHK{"Safety & Validation"}
-    CHK -->|pass| RESP["Response"]
-    CHK -->|fail| FALL["Escalate / Fallback"]
-```
+## What I Build
 
-Reasoning stays in the orchestrator. Retrieval and tool calls are isolated so failures are traceable instead of silent. Every response passes through validation before it reaches the user.
+| Capability | Practical focus |
+| --- | --- |
+| **Autonomous agents** | Multi-step reasoning, tool selection, memory, planning, and self-correction |
+| **RAG systems** | Grounded retrieval over private documents, databases, and vector stores |
+| **Healthcare AI** | Patient intake, clinical documentation, scheduling, and safety-aware automation |
+| **AI backends** | FastAPI and Flask services, streaming responses, integrations, and observability |
+| **Workflow automation** | n8n and LLM pipelines for operational processes and communication |
 
-## Featured Builds
+## Selected Work
 
-### CORTEX - Local AI Agent Framework
+### Areya · Production Medical AI Agent
 
-> A private, local-first agent framework designed for control instead of API dependency.
+An autonomous patient-intake agent supporting structured conversations over text and voice.
 
-`Python` `LATS Orchestration` `Four-Tier Memory` `OpenTelemetry`
+`LangChain` `Ollama` `Qdrant` `Flask` `PostgreSQL` `STT/TTS`
 
-- Four-tier memory: short-term, episodic, semantic, and procedural
-- LATS-based orchestration for tree-search-style agent planning
-- Full observability through OpenTelemetry tracing
-- **Status:** Open-sourceable | **Domain:** Agent infrastructure
+- Reduced intake time from approximately 15 minutes to under 5 minutes
+- Reduced manual intake workload by an estimated 70%
+- Kept patient data away from external APIs through local inference
+- Combined RAG, tool use, safety checks, and emergency escalation logic
 
-### NEXUS - AI Content Creation SaaS
+### CORTEX · Local-First Agent Framework
 
-> An end-to-end content pipeline that crawls, drafts, generates, and publishes with billing built in.
+A private agent framework built for control, inspectability, and independence from hosted APIs.
 
-`Python` `LangChain` `DALLE 3` `Stripe`
+`Python` `LATS` `Four-Tier Memory` `OpenTelemetry`
 
-- Multi-source crawling for content research
-- Automatic publishing to LinkedIn and X
-- DALLE 3 cover image generation for each post
-- Stripe-metered subscription billing
-- **Domain:** AI SaaS
+- Short-term, episodic, semantic, and procedural memory
+- LATS-based tree-search planning with self-correction
+- OpenTelemetry tracing across agent runs
+- **Status:** Open-sourceable · **Domain:** Agent infrastructure
+
+### AI Resume Analyzer
+
+A three-agent evaluation pipeline for analyzing, improving, and formatting resumes.
+
+`FastAPI` `BGE Embeddings` `Qdrant` `Gemini` `SSE`
+
+- Deterministic scoring across keywords, semantics, experience, formatting, and impact
+- Analyzer, Optimizer, and Formatter agents with streamed results
+- Runs in under 400 ms excluding LLM calls
+- 39 tests running in CI
 
 ### Clinical Automation Workflows
 
-> Production automation for clinical operations, including appointments, notes, and documentation.
+Production n8n workflows for clinical operations and documentation.
 
 `n8n` `LLM Chains` `PostgreSQL` `STT/TTS`
 
 - Appointment booking, rescheduling, and conflict detection
 - Speech-to-text clinical documentation pipelines
-- Strict validation to prevent fabricated medical data
-- **Status:** Production | **Domain:** Healthcare automation
+- Strict validation designed to prevent fabricated medical data
+- **Status:** Production · **Domain:** Healthcare automation
 
 <details>
-<summary><b>More builds</b></summary>
+<summary><b>More projects</b></summary>
 
 <br />
 
-- **AI Resume Analyzer** - FastAPI, BGE embeddings, Qdrant, Gemini, and a three-agent evaluation pipeline
-- **Personal AI Proxy Agent** - WhatsApp-based JARVIS-style assistant with message routing, calendar management, and lead qualification using Twilio, FastAPI, LangChain, Claude API, and Qdrant
-- **GitHub Code Review Agent** - Automated pull request review system with tool-based reasoning
-- **Skin Lesion Segmentation** - U-Net versus ResUNet comparison on the ISIC 2018 dataset with a Streamlit interface
+- **NEXUS** - AI content creation SaaS with multi-source crawling, LangChain, DALL-E 3, auto-publishing to LinkedIn and X, and Stripe billing
+- **Personal AI Proxy Agent** - WhatsApp-based assistant for message routing, calendar management, and lead qualification using Twilio, FastAPI, LangChain, Claude API, and Qdrant
+- **GitHub Code Review Agent** - Automated pull request review with tool-based reasoning
+- **Skin Lesion Segmentation** - U-Net versus ResUNet on 2,596 ISIC 2018 dermoscopic images with a Streamlit visualization interface
+- **AI Research Agent** - Multi-step research with web search, vector retrieval, and citation tracking
 
 </details>
 
-## Technical Stack
+## Agent Design Principles
 
-| Area | Tools |
-| --- | --- |
-| **Agents and LLMs** | LangChain, Claude API, OpenAI, Gemini, Ollama |
-| **Retrieval and data** | Qdrant, ChromaDB, PostgreSQL, Redis |
-| **Backend and infrastructure** | Python, FastAPI, Flask, Docker, Linux |
-| **Automation and integrations** | n8n, Twilio, Stripe |
-| **Machine learning and computer vision** | TensorFlow, Keras, OpenCV, scikit-learn, Streamlit |
-| **Developer tooling** | Git, GitHub Actions, GitHub, VS Code, Cursor |
+```mermaid
+flowchart LR
+    INPUT["User or Trigger"] --> ORCH["Orchestrator"]
+    ORCH --> PLAN["Plan and Reason"]
+    ORCH --> RETRIEVE["Retrieve Context"]
+    ORCH --> TOOLS["Call Tools"]
+    RETRIEVE --> VECTOR["Qdrant / Chroma"]
+    TOOLS --> SYSTEMS["APIs / Databases"]
+    PLAN --> CHECK{"Validate and Guardrail"}
+    VECTOR --> CHECK
+    SYSTEMS --> CHECK
+    CHECK -->|pass| ANSWER["Answer or Action"]
+    CHECK -->|fail| ESCALATE["Fallback or Human Handoff"]
+```
+
+- Keep reasoning in the orchestrator and isolate retrieval and tool calls
+- Ground answers in known data instead of relying on unsupported model memory
+- Validate sensitive outputs before they become user-visible actions
+- Trace failures so an agent can be debugged as a system, not guessed at as a prompt
+
+## Stack
+
+**Agents and LLMs**
+
+LangChain · Claude API · OpenAI · Gemini · Ollama
+
+**Retrieval and data**
+
+Qdrant · ChromaDB · PostgreSQL · Redis
+
+**Backend and infrastructure**
+
+Python · FastAPI · Flask · Docker · Linux
+
+**Automation and integrations**
+
+n8n · Twilio · Stripe
+
+**ML and computer vision**
+
+TensorFlow · Keras · OpenCV · scikit-learn · Streamlit
+
+**Developer tooling**
+
+Git · GitHub Actions · VS Code · Cursor
 
 <div align="center">
 <img src="https://skillicons.dev/icons?i=python,fastapi,flask,docker,linux,postgres,redis,nextjs,git,github,vscode,opencv,tensorflow&theme=dark" alt="Technology stack icons" />
@@ -112,27 +148,19 @@ Reasoning stays in the orchestrator. Retrieval and tool calls are isolated so fa
 
 ## Experience
 
-### Independent GenAI Engineer - Freelance / Contract
-`2026 - Present`
+| Role | Organization | Period |
+| --- | --- | --- |
+| **AI Agent Developer** | Code Crew Studio, Mumbai · Remote | Feb 2026 - Present |
+| **Independent GenAI Engineer** | Freelance / Contract | Ongoing |
+| **GenAI Engineer** | ReinHealth.ai · Stealth healthcare startup | Jul 2024 - Feb 2026 |
+| **Machine Learning Intern** | Igeeks Technologies, Bangalore | Jun 2023 - Jul 2023 |
 
-Agent systems, automation platforms, and AI backend work for early-stage teams and healthcare clients.
-
-### GenAI Engineer - ReinHealth.ai
-`Jul 2024 - Feb 2026` | Stealth healthcare startup
-
-Designed and shipped autonomous medical AI agents, RAG pipelines, and clinical workflow automation for production healthcare environments.
-
-### Machine Learning Intern - Igeeks Technologies, Bangalore
-`Jun 2023 - Jul 2023`
-
-Built image classification models using CNNs, AlexNet, and MLP architectures on custom dataset pipelines.
+At ReinHealth.ai, I designed and shipped autonomous medical AI agents, RAG pipelines, and clinical workflow automation for production healthcare environments. At Igeeks Technologies, I built image-classification models with CNN, AlexNet, and MLP architectures using custom dataset pipelines.
 
 ## Education
 
-| Qualification | Institution | Period |
-| --- | --- | --- |
-| **B.E. in Artificial Intelligence & Machine Learning** | NMAM Institute of Technology | 2020 - 2024 |
-| **Executive PG in Data Science & AI** | IIT Roorkee via Intellipaat | Ongoing |
+- **B.E. in Artificial Intelligence & Machine Learning** - NMAM Institute of Technology, 2020-2024
+- **Executive Post Graduate Certification in Data Science & AI** - iHUB DivyaSampark, IIT Roorkee, 2024-2026
 
 ## GitHub Activity
 
@@ -143,223 +171,22 @@ Built image classification models using CNNs, AlexNet, and MLP architectures on 
 
 <br />
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=roydonsequeira&layout=compact&theme=tokyonight&hide_border=true&title_color=FF9800&bg_color=0D1117" alt="Most used languages" />
-
-<br />
-
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=roydonsequeira&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=FF9800&line=FF9800&point=ffffff" width="95%" alt="GitHub activity graph" />
-
-<br />
-
-<img src="https://github-profile-trophy.vercel.app/?username=roydonsequeira&theme=tokyonight&no-frame=true&row=1&column=6" alt="GitHub trophies" />
-
-<!-- Enable .github/workflows/snake.yml to render the contribution snake. -->
-<br />
-<img src="https://raw.githubusercontent.com/roydonsequeira/roydonsequeira/output/github-contribution-grid-snake.svg" width="100%" alt="GitHub contribution snake" />
-
-<br />
-
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Inspirational quote" />
 
 </div>
 
-## Let's Connect
+## Let's Build Something Useful
+
+I am open to **AI engineering roles, GenAI work, LLM systems, healthcare AI, contracts, and production automation projects**.
 
 <div align="center">
 
-**Open to AI engineering, GenAI, LLM systems, and healthcare AI opportunities.**
-
-Building something that needs production-grade AI? Let's talk.
-
-<br />
-
-<a href="https://www.linkedin.com/in/roydonsequeira/"><img src="https://img.shields.io/static/v1?label=&message=LinkedIn&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2" alt="LinkedIn" /></a>
-<a href="mailto:roydnsequeira@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=Email&color=EA4335&style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335" alt="Email" /></a>
-<a href="https://x.com/roydonsequeiraa"><img src="https://img.shields.io/static/v1?label=&message=X&color=000000&style=for-the-badge&logo=x&logoColor=white&labelColor=000000" alt="X" /></a>
-<a href="https://roydonsequeira.com"><img src="https://img.shields.io/static/v1?label=&message=Portfolio&color=FF9800&style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=FF9800" alt="Portfolio" /></a>
+[![Portfolio](https://img.shields.io/badge/Visit_the_portfolio-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://roydonsequeira.com)
+[![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roydonsequeira/)
+[![Email](https://img.shields.io/badge/Send_an_email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:roydnsequeira@gmail.com)
 
 <br />
 
 <img src="https://komarev.com/ghpvc/?username=roydonsequeira&color=ff9800&style=flat-square&label=Profile+Views" alt="Profile views" />
 
 </div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:FF9800,100:0D1117&height=120&section=footer" width="100%" alt="" />
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:FF9800,100:0D1117&height=200&section=header&text=Roydon%20Sequeira&fontSize=56&fontColor=ffffff&animation=twinkling&fontAlignY=42" width="100%" />
-
-<a href="https://github.com/roydonsequeira">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=2600&pause=800&color=FF9800&center=true&vCenter=true&width=680&height=50&lines=GenAI+Engineer;AI+Agent+Architect;LLM+%26+RAG+Systems+Engineer;Healthcare+AI+Specialist;Open-Source+Tooling+Builder" alt="Typing SVG" />
-</a>
-
-<br/>
-
-[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydonsequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2)](https://www.linkedin.com/in/roydonsequeira/)
-[![GitHub](https://img.shields.io/static/v1?label=&message=roydonsequeira&color=181717&style=for-the-badge&logo=github&logoColor=white&labelColor=181717)](https://github.com/roydonsequeira)
-[![X](https://img.shields.io/static/v1?label=&message=%40roydonsequeiraa&color=000000&style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/roydonsequeiraa)
-[![Email](https://img.shields.io/static/v1?label=&message=roydnsequeira%40gmail.com&color=EA4335&style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
-[![Portfolio](https://img.shields.io/static/v1?label=&message=roydonsequeira.com&color=FF9800&style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=FF9800)](https://roydonsequeira.com)
-
-</div>
-
-<br/>
-
-```bash
-$ whoami
-GenAI engineer based in Udupi, India — ~2 years shipping production AI systems.
-
-$ cat focus.txt
-Autonomous agents, RAG pipelines, and LLM systems that hold up under real load —
-not just in a demo. Deep in agent orchestration, memory architectures, and
-healthcare-grade automation right now.
-
-$ history | grep -i experience
-ReinHealth.ai   →  medical AI agents, RAG pipelines, clinical automation  (2024–2026)
-Freelance       →  agent systems, automation platforms, AI backend work  (ongoing)
-```
-
----
-
-## How I Build Agents
-
-```mermaid
-flowchart LR
-    U["User / Trigger"] --> O["Agent Orchestrator"]
-    O --> MEM[("Memory Store")]
-    O --> RAG["RAG Retrieval"]
-    O --> TOOL["Tool Calls"]
-    RAG --> VDB[("Vector DB — Qdrant / Chroma")]
-    TOOL --> EXT["External APIs / DBs"]
-    O --> CHK{"Safety & Validation"}
-    CHK -->|pass| RESP["Response"]
-    CHK -->|fail| FALL["Escalate / Fallback"]
-```
-
-Reasoning stays in the orchestrator. Retrieval and tool calls are isolated so failures are traceable, not silent. Nothing reaches the user without a validation pass — this is the pattern behind most of what's below.
-
----
-
-## Featured Builds
-
-### CORTEX — Local AI Agent Framework
-> A private, local-first agent framework built for control instead of API dependency.
-
-`Python` `LATS Orchestration` `Four-Tier Memory` `OpenTelemetry`
-
-- Four-tier memory: short-term, episodic, semantic, procedural
-- LATS-based orchestration for tree-search style agent planning
-- Full observability via OpenTelemetry tracing
-- **Status:** Open-sourceable · **Domain:** Agent Infrastructure
-
----
-
-### NEXUS — AI Content Creation SaaS
-> End-to-end content pipeline: crawl, draft, generate, and publish — with billing built in.
-
-`Python` `LangChain` `DALL-E 3` `Stripe`
-
-- Multi-source crawling for content research
-- Auto-publishing to LinkedIn and X
-- DALL·E 3 generated cover images per post
-- Stripe-metered subscription billing
-- **Domain:** AI SaaS
-
----
-
-### Clinical Automation Workflows (n8n)
-> Production automation suite for clinical operations — appointments, notes, and documentation.
-
-`n8n` `LLM Chains` `PostgreSQL` `STT/TTS`
-
-- Intelligent appointment booking, rescheduling, and conflict detection
-- Speech-to-text clinical documentation pipelines
-- Strict validation to prevent fabricated medical data
-- **Status:** Production · **Domain:** Healthcare Automation
-
-<details>
-<summary><b>More builds</b></summary>
-<br/>
-
-**AI Resume Analyzer** — FastAPI + BGE embeddings + Qdrant + Gemini, three-agent evaluation pipeline
-
-**Personal AI Proxy Agent** — WhatsApp-based JARVIS-style assistant with message routing, calendar management, and lead qualification (Twilio, FastAPI, LangChain, Claude API, Qdrant)
-
-**GitHub Code Review Agent** — Automated PR review system with tool-based reasoning
-
-**Skin Lesion Segmentation** — U-Net vs ResUNet comparison on the ISIC 2018 dataset (2,596 dermoscopic images), Streamlit interface for clinical visualization
-
-</details>
-
----
-
-## Stack
-
-<div align="center">
-<img src="https://skillicons.dev/icons?i=python,fastapi,flask,docker,linux,postgres,redis,nextjs,git,github,vscode,opencv,tensorflow&theme=dark" />
-</div>
-
-```yaml
-agents:      [LangChain, Claude API, OpenAI, Gemini, Ollama]
-retrieval:   [Qdrant, ChromaDB, PostgreSQL]
-backend:     [FastAPI, Flask, Redis, Docker, Linux]
-automation:  [n8n, Twilio, Stripe]
-ml_cv:       [TensorFlow, Keras, OpenCV, scikit-learn, Streamlit]
-tools:       [Git, GitHub Actions, VS Code, Cursor]
-```
-
----
-
-## Experience
-
-**Independent GenAI Engineer** — Freelance / Contract · `2026 – Present`
-Agent systems, automation platforms, and AI backend work for early-stage teams and healthcare clients.
-
-**GenAI Engineer** — ReinHealth.ai (Stealth Healthcare Startup) · `Jul 2024 – Feb 2026`
-Designed and shipped autonomous medical AI agents, RAG pipelines, and clinical workflow automation for production healthcare environments.
-
-**Machine Learning Intern** — Igeeks Technologies, Bangalore · `Jun 2023 – Jul 2023`
-Built image classification models using CNNs, AlexNet, and MLP architectures on custom dataset pipelines.
-
-## Education
-
-**B.E., Artificial Intelligence & Machine Learning** — NMAM Institute of Technology · `2020 – 2024`
-**Executive PG, Data Science & AI** — IIT Roorkee (via Intellipaat) · `Ongoing`
-
----
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=roydonsequeira&show_icons=true&theme=tokyonight&hide_border=true&title_color=FF9800&icon_color=FF9800&text_color=c9d1d9&bg_color=0D1117" />
-<img height="165" src="https://streak-stats.demolab.com/?user=roydonsequeira&theme=tokyonight&hide_border=true&background=0D1117&ring=FF9800&fire=FF9800&currStreakLabel=FF9800" />
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=roydonsequeira&layout=compact&theme=tokyonight&hide_border=true&title_color=FF9800&bg_color=0D1117" />
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=roydonsequeira&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=FF9800&line=FF9800&point=ffffff" width="95%" />
-
-<img src="https://github-profile-trophy.vercel.app/?username=roydonsequeira&theme=tokyonight&no-frame=true&row=1&column=6" />
-
-<!-- Needs .github/workflows/snake.yml enabled once — see the file from earlier in this chat -->
-<img src="https://raw.githubusercontent.com/roydonsequeira/roydonsequeira/output/github-contribution-grid-snake.svg" width="100%" />
-
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" />
-
-</div>
-
----
-
-<div align="center">
-
-**Open to work on AI Engineering, GenAI, LLM systems, and healthcare AI.**
-Building something that needs production-grade AI? Let's talk.
-
-[![LinkedIn](https://img.shields.io/static/v1?label=&message=roydonsequeira&color=0A66C2&style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2)](https://www.linkedin.com/in/roydonsequeira/)
-[![Email](https://img.shields.io/static/v1?label=&message=roydnsequeira%40gmail.com&color=EA4335&style=for-the-badge&logo=gmail&logoColor=white&labelColor=EA4335)](https://mail.google.com/mail/?view=cm&fs=1&to=roydnsequeira@gmail.com)
-[![X](https://img.shields.io/static/v1?label=&message=%40roydonsequeiraa&color=000000&style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/roydonsequeiraa)
-[![Portfolio](https://img.shields.io/static/v1?label=&message=roydonsequeira.com&color=FF9800&style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=FF9800)](https://roydonsequeira.com)
-
-<img src="https://komarev.com/ghpvc/?username=roydonsequeira&color=ff9800&style=flat-square&label=Profile+Views" />
-
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:FF9800,100:0D1117&height=120&section=footer" width="100%" />
