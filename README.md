@@ -40,7 +40,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/impact-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/impact-light.svg">
-  <img alt="Impact: about 70% less manual patient-intake workload; patient intake down from 15 minutes to under 5; zero patient records sent to external APIs; 391 tests behind CORTEX (204 unit plus 187 live conversations)." src="assets/impact-dark.svg" width="100%">
+  <img alt="Impact: about 70% less manual patient-intake workload; patient intake down from 15 minutes to under 5; zero patient records sent to external APIs; 505 tests behind CORTEX (318 unit plus 187 live conversations)." src="assets/impact-dark.svg" width="100%">
 </picture>
 
 <sub>Intake figures come from the production medical agent I led at ReinHealth. Test counts come from CORTEX's unit suite and live test battery.</sub>
@@ -60,7 +60,7 @@ Local-first by default. Most of this runs entirely on hardware you own, with no 
 <p align="center">
   <a href="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/actions/workflows/ci.yml"><img alt="CI status" src="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/actions/workflows/ci.yml/badge.svg?branch=main"></a>
   <a href="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/roydonsequeira/CORTEX-Private-Intelligence-Framework?style=flat-square&labelColor=0A0B0D&color=00E6C3"></a>
-  <a href="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/tree/main/evals/live_battery"><img alt="Tests: 204 unit and 187 live" src="https://img.shields.io/badge/tests-204_unit_%2B_187_live-00E6C3?style=flat-square&labelColor=0A0B0D"></a>
+  <a href="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/tree/main/evals/live_battery"><img alt="Tests: 318 unit and 187 live" src="https://img.shields.io/badge/tests-318_unit_%2B_187_live-00E6C3?style=flat-square&labelColor=0A0B0D"></a>
   <img alt="License: MIT" src="https://img.shields.io/github/license/roydonsequeira/CORTEX-Private-Intelligence-Framework?style=flat-square&labelColor=0A0B0D&color=00E6C3">
 </p>
 

@@ -448,14 +448,14 @@ IMPACT = [
     ("REINHEALTH · PROD", "~70%", "less manual patient-intake workload", "bar", .70),
     ("REINHEALTH · PROD", "<5 min", "patient intake, down from 15 min", "compare", 5 / 15),
     ("LOCAL LLM ORCHESTRATION", "0", "patient records sent to external APIs", "dots", 1),
-    ("CORTEX · OPEN SOURCE", "391", "tests: 204 unit + 187 live conversations", "stack", 204 / 391),
+    ("CORTEX · OPEN SOURCE", "505", "tests: 318 unit + 187 live conversations", "stack", 318 / 505),
 ]
 
 
 def impact(face: Face, theme: str) -> Svg:
     s = Svg(face, THEMES[theme], 1000, 196, "Impact",
             "About 70% less manual patient-intake work. Patient intake down from 15 minutes to under 5. "
-            "Zero patient records sent to external APIs. 391 tests behind CORTEX: 204 unit and 187 live conversations.")
+            "Zero patient records sent to external APIs. 505 tests behind CORTEX: 318 unit and 187 live conversations.")
     t = s.t
     tile_w, gap = 235, 20
     for i, (tag, num, caption, viz, frac) in enumerate(IMPACT):
