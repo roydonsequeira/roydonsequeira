@@ -14,7 +14,6 @@ Set CASCADIA_FONT to a CascadiaCode.ttf path when not on Windows
 """
 from __future__ import annotations
 
-import math
 import os
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -257,188 +256,23 @@ def rise(s: Svg, delay: float, *parts: str, cls: str = "in") -> None:
 
 # ---------------------------------------------------------------------- hero
 
-PHRASES = [
-    "local-first agents that never phone home",
-    "multi-agent systems with real guardrails",
-    "RAG pipelines grounded in your own data",
-    "healthcare AI that escalates when it should",
-]
-
-
 def hero(face: Face, theme: str) -> Svg:
-    s = Svg(face, THEMES[theme], 1000, 400,
-            "Roydon Sequeira — GenAI Engineer and AI Agent Architect",
-            "I build AI agents that plan, retrieve and act, and know when to hand off to a human. "
-            "AI Agent Developer at Code Crew Studio, based in Udupi, India.")
+    s = Svg(face, THEMES[theme], 1000, 280,
+            "Roydon Sequeira, AI Agent Developer",
+            "AI Agent Developer at Code Crew Studio. Previously GenAI Engineer at ReinHealth, a healthcare "
+            "AI startup. Based in Udupi, India. Open to AI engineering roles and contracts.")
     t = s.t
-    cx, cy, orbit = 800, 214, 128
-    backdrop(s, glow=(cx, cy, 340))
+    backdrop(s, glow=(840, 120, 380))
 
-    rise(s, 0.0, s.text("~/roydonsequeira", 44, 54, 13, fill="faint"),
+    rise(s, 0.0, s.text("roydonsequeira.com", 44, 54, 13, fill="faint"),
          s.text("UDUPI, IN · UTC+05:30", 956, 54, 12, fill="faint", anchor="end", ls=1.2))
-    rise(s, 0.1, s.text("Roydon Sequeira", 44, 146, 56, w="b"))
-    rise(s, 0.22, s.text("GenAI Engineer · AI Agent Architect", 44, 190, 20, w="m", fill="accent"))
-    rise(s, 0.34, s.text("I build AI agents that plan, retrieve and act,", 44, 232, 15, fill="muted"),
-         s.text("and know when to hand off to a human.", 44, 256, 15, fill="muted"))
-
-    # Prompt pill with a typewriter cycling through what I'm building.
-    px, py, size = 62, 309, 15
-    a = adv(size)
-    s.defs.append(f'<clipPath id="typing"><rect x="{px - 4}" y="{py - 20}" width="{556 - 14 - px + 4}" height="28"/></clipPath>')
-    pill = [f'<rect x="44" y="282" width="512" height="44" rx="10" fill="{t["panel"]}" stroke="{t["line"]}"/>',
-            s.text("$", px, py, size, w="b", fill="accent"),
-            s.text("building", px + 2 * a, py, size, fill="muted")]
-    start = px + 11 * a
-    period, per = 16.0, 16.0 / len(PHRASES)
-    vis = per / period * 100
-    s.css.append(f"@keyframes ph{{0%,{n(vis - .05)}%{{opacity:1}}{n(vis)}%,100%{{opacity:0}}}}")
-    typed = []
-    for i, phrase in enumerate(PHRASES):
-        k, width = len(phrase), len(phrase) * a
-        typing = min(0.045 * k, 1.9)
-        p_a, p_b, p_c = typing / period * 100, (per - 0.9) / period * 100, (per - 0.35) / period * 100
-        s.css.append(
-            f"@keyframes ty{i}{{0%{{transform:translateX(0);animation-timing-function:steps({k},end)}}"
-            f"{n(p_a)}%,{n(p_b)}%{{transform:translateX({n(width)}px);animation-timing-function:steps({k},end)}}"
-            f"{n(p_c)}%,100%{{transform:translateX(0)}}}}"
-        )
-        delay = 0 if i == 0 else -(period - i * per)
-        anim = f"{n(period)}s linear {n(delay)}s infinite"
-        typed.append(
-            f'<g style="opacity:{1 if i == 0 else 0};animation:ph {anim}">'
-            + s.text(phrase, start, py, size, fill="ink")
-            + f'<g style="transform:translateX({n(width)}px);animation:ty{i} {anim}">'
-            f'<rect x="{n(start)}" y="{py - 19}" width="{n(40 * a + 60)}" height="26" fill="{t["panel"]}"/>'
-            f'<rect class="blink" x="{n(start)}" y="{py - 14}" width="{n(a)}" height="18" fill="{t["accent"]}"/></g></g>'
-        )
-    rise(s, 0.46, *pill, f'<g clip-path="url(#typing)">{"".join(typed)}</g>')
-
-    rise(s, 0.58,
-         f'<circle class="ping" cx="52" cy="358" r="4.5" fill="{t["accent"]}" opacity="0"/>',
-         f'<circle cx="52" cy="358" r="4.5" fill="{t["accent"]}"/>',
-         s.text("AI Agent Developer @ Code Crew Studio · open to roles & contracts", 66, 362.5, 13, fill="muted"))
-
-    # Agent graph: an orchestrator dispatching to the parts of an agent.
-    nodes = [("PLAN", -90), ("MEMORY", -30), ("TOOLS", 30), ("GUARD", 90), ("RAG", 150), ("LLM", 210)]
-    graph = [f'<circle cx="{cx}" cy="{cy}" r="{orbit}" fill="none" stroke="{t["line"]}" stroke-dasharray="2 6"/>',
-             f'<circle class="spin" cx="{cx}" cy="{cy}" r="66" fill="none" stroke="{t["accent"]}" stroke-opacity=".45" stroke-dasharray="1 7 16 7"/>']
-    boxes = []
-    period = 3.6
-    for i, (label, deg) in enumerate(nodes):
-        r = math.radians(deg)
-        nx, ny = cx + orbit * math.cos(r), cy + orbit * math.sin(r)
-        ux, uy = math.cos(r), math.sin(r)
-        x1, y1 = cx + ux * 40, cy + uy * 30
-        x2, y2 = nx - ux * 22, ny - uy * 18
-        length = math.hypot(x2 - x1, y2 - y1)
-        out_d = f"M{n(x1)} {n(y1)}L{n(x2)} {n(y2)}"
-        back_d = f"M{n(x2)} {n(y2)}L{n(x1)} {n(y1)}"
-        delay = i * period / len(nodes)
-        graph.append(f'<path d="{out_d}" stroke="{t["faint"]}" stroke-opacity=".55" stroke-width="1.2"/>')
-        graph.append(s.pulse(out_d, length, period, delay, dash=16, width=2.8, travel=.42))
-        graph.append(s.pulse(back_d, length, period, delay + period * .5, color="soft", width=1.6, dash=8, travel=.42))
-        bw = 96
-        s.css.append(
-            f"@keyframes nf{i}{{0%,36%{{stroke:{t['line']}}}44%{{stroke:{t['accent']}}}70%,100%{{stroke:{t['line']}}}}}"
-        )
-        boxes.append(
-            f'<rect x="{n(nx - bw / 2)}" y="{n(ny - 15)}" width="{bw}" height="30" rx="8" fill="{t["panel"]}" '
-            f'stroke="{t["line"]}" style="animation:nf{i} {n(period)}s linear {n(delay)}s infinite"/>'
-            + s.text(label, nx, ny + 4.2, 11.5, w="b", anchor="middle", ls=1)
-        )
-    center = [f'<rect x="{cx - 70}" y="{cy - 22}" width="140" height="44" rx="11" fill="{t["panel"]}" stroke="{t["accent"]}"/>',
-              s.text("ORCHESTRATOR", cx, cy + 4.5, 12.5, w="b", fill="accent", anchor="middle", ls=.6)]
-    rise(s, 0.3, *graph, *boxes, *center, cls="fade")
-    return s
-
-
-# ------------------------------------------------------------------ terminal
-
-PIXELS = {
-    "R": ["1111.", "1...1", "1...1", "1111.", "1.1..", "1..1.", "1...1"],
-    "S": [".1111", "1....", "1....", ".111.", "....1", "....1", "1111."],
-}
-
-NEOFETCH = [
-    ("Role", "AI Agent Developer @ Code Crew Studio"),
-    ("Previous", "GenAI Engineer @ ReinHealth (stealth AI health)"),
-    ("Focus", "Multi-agent systems, LLM orchestration, RAG"),
-    ("Stack", "Python, LangChain, Qdrant, FastAPI, Docker"),
-    ("Runtime", "Ollama for local-first, private inference"),
-    ("Patterns", "ReAct · LATS · supervisor-worker · RAG"),
-    ("Uptime", "2+ years shipping production AI"),
-    ("Location", "Udupi, Karnataka, India"),
-    ("Status", "● Open to AI engineering roles & contracts"),
-]
-
-
-def terminal(face: Face, theme: str) -> Svg:
-    W = 880
-    s = Svg(face, THEMES[theme], W, 470, "whoami",
-            "Roydon Sequeira. " + ". ".join(f"{k}: {v.lstrip('● ')}" for k, v in NEOFETCH) + ".")
-    t = s.t
-    s.add(f'<rect x=".5" y=".5" width="{W - 1}" height="469" rx="15.5" fill="{t["surface"]}" stroke="{t["line"]}"/>',
-          f'<path d="M.5 44V16A15.5 15.5 0 0 1 16 .5H{W - 16}A15.5 15.5 0 0 1 {W - .5} 16V44Z" fill="{t["panel"]}"/>',
-          f'<path d="M.5 44.5H{W - .5}" stroke="{t["line"]}"/>')
-    for i, color in enumerate(t["dots"]):
-        s.add(f'<circle cx="{26 + i * 20}" cy="22" r="6" fill="{color}"/>')
-    s.add(s.text("roy@cortex — zsh — 100×28", W / 2, 26.5, 12.5, fill="faint", anchor="middle"))
-
-    size, a, x0 = 15, adv(15), 32
-    prompt, cmd = "roy@cortex:~$ ", "neofetch --user roydon"
-    y = 84
-    cx = x0 + len(prompt) * a
-    width = len(cmd) * a
-    s.css.append(f"@keyframes cmd{{from{{transform:translateX(0)}}to{{transform:translateX({n(width)}px)}}}}"
-                 "@keyframes gone{0%,97%{opacity:1}100%{opacity:0}}")
-    s.add(s.text("roy@cortex", x0, y, size, w="b", fill="accent"), s.text(":~$", x0 + 10 * a, y, size, fill="ink"),
-          s.text(cmd, cx, y, size),
-          f'<g style="transform:translateX({n(width)}px);animation:cmd 1s steps({len(cmd)},end) .35s both">'
-          f'<rect x="{n(cx)}" y="{y - 18}" width="{n(width + 20)}" height="26" fill="{t["surface"]}"/>'
-          f'<rect x="{n(cx)}" y="{y - 14}" width="{n(a)}" height="18" fill="{t["accent"]}" '
-          f'style="opacity:0;animation:gone 1.45s linear both"/></g>')
-
-    # Pixel monogram.
-    px, top, cell = 58, 150, 17
-    s.defs.append(f'<linearGradient id="mono" x1="0" y1="{top}" x2="0" y2="{top + 7 * cell}" gradientUnits="userSpaceOnUse">'
-                  f'<stop offset="0" stop-color="{t["soft"]}"/><stop offset="1" stop-color="{t["accent"]}"/></linearGradient>')
-    pixels = []
-    for li, letter in enumerate("RS"):
-        for r, row in enumerate(PIXELS[letter]):
-            for c, on in enumerate(row):
-                if on != "1":
-                    continue
-                col = li * 6 + c
-                pixels.append(f'<rect class="pop" x="{px + col * cell}" y="{top + r * cell}" width="{cell - 2}" '
-                              f'height="{cell - 2}" rx="2" fill="url(#mono)" style="animation-delay:{n(1.45 + col * .04 + r * .02)}s"/>')
-    s.add(*pixels)
-    s.add(s.text("AGENTS · RAG · LLMOPS", px + (11 * cell - 2) / 2, top + 7 * cell + 34, 11, fill="faint", anchor="middle", ls=1.4))
-
-    ix, iy, lh = 300, 126, 25
-    head = "roydon@udupi"
-    rise(s, 1.45, s.text("roydon", ix, iy, size, w="b", fill="accent"), s.text("@", ix + 6 * a, iy, size),
-         s.text("udupi", ix + 7 * a, iy, size, w="b", fill="accent"),
-         s.text("-" * len(head), ix, iy + lh, size, fill="faint"), cls="fade")
-    for i, (key, value) in enumerate(NEOFETCH):
-        yy = iy + (i + 2) * lh
-        parts = [s.text(f"{key}:", ix, yy, size, w="b", fill="accent")]
-        vx = ix + 10 * a
-        if value.startswith("●"):
-            parts.append(f'<circle class="ping" cx="{n(vx + a / 2)}" cy="{yy - 5}" r="4" fill="{t["accent"]}" opacity="0"/>')
-            parts.append(f'<circle cx="{n(vx + a / 2)}" cy="{yy - 5}" r="4" fill="{t["accent"]}"/>')
-            parts.append(s.text(value[2:], vx + 2 * a, yy, size, fill="ink"))
-        else:
-            parts.append(s.text(value, vx, yy, size, fill="ink"))
-        rise(s, 1.55 + i * .07, *parts)
-
-    py = iy + (len(NEOFETCH) + 2) * lh - 4
-    blocks = [f'<rect class="pop" x="{ix + i * 34}" y="{py}" width="30" height="16" rx="3" fill="{color}" '
-              f'style="animation-delay:{n(2.25 + i * .05)}s"/>' for i, color in enumerate(t["palette"])]
-    s.add(*blocks)
-
-    fy = 446
-    rise(s, 2.6, s.text("roy@cortex", x0, fy, size, w="b", fill="accent"), s.text(":~$", x0 + 10 * a, fy, size),
-         f'<rect class="blink" x="{n(cx)}" y="{fy - 14}" width="{n(a)}" height="18" fill="{t["accent"]}"/>', cls="fade")
+    rise(s, 0.1, s.text("Roydon Sequeira", 44, 140, 56, w="b"))
+    rise(s, 0.22, s.text("AI Agent Developer · Code Crew Studio", 44, 182, 20, w="m", fill="accent"))
+    rise(s, 0.34, s.text("Previously GenAI Engineer at ReinHealth (healthcare AI)", 44, 214, 15, fill="muted"))
+    rise(s, 0.46,
+         f'<circle class="ping" cx="52" cy="244" r="4.5" fill="{t["accent"]}" opacity="0"/>',
+         f'<circle cx="52" cy="244" r="4.5" fill="{t["accent"]}"/>',
+         s.text("Open to AI engineering roles and contracts", 66, 248.5, 13, fill="muted"))
     return s
 
 
@@ -448,14 +282,15 @@ IMPACT = [
     ("REINHEALTH · PROD", "~70%", "less manual patient-intake workload", "bar", .70),
     ("REINHEALTH · PROD", "<5 min", "patient intake, down from 15 min", "compare", 5 / 15),
     ("LOCAL LLM ORCHESTRATION", "0", "patient records sent to external APIs", "dots", 1),
-    ("CORTEX · OPEN SOURCE", "505", "tests: 318 unit + 187 live conversations", "stack", 318 / 505),
+    ("CORTEX · LIVE TESTING", "27", "bugs found by 187 live conversations", "count", 27),
 ]
 
 
 def impact(face: Face, theme: str) -> Svg:
     s = Svg(face, THEMES[theme], 1000, 196, "Impact",
-            "About 70% less manual patient-intake work. Patient intake down from 15 minutes to under 5. "
-            "Zero patient records sent to external APIs. 505 tests behind CORTEX: 318 unit and 187 live conversations.")
+            "About 70% less manual patient-intake work (estimated). Patient intake down from 15 minutes to under 5. "
+            "Zero patient records sent to external APIs. 27 bugs in CORTEX found by 187 live conversations "
+            "that its unit tests had missed.")
     t = s.t
     tile_w, gap = 235, 20
     for i, (tag, num, caption, viz, frac) in enumerate(IMPACT):
@@ -479,10 +314,12 @@ def impact(face: Face, theme: str) -> Svg:
             for k in range(14):
                 s.add(f'<rect class="pop" x="{n(ix + k * iw / 14)}" y="{by - 2}" width="10" height="10" rx="2.5" '
                       f'fill="none" stroke="{t["accent"]}" style="animation-delay:{n(d + k * .04)}s"/>')
-        elif viz == "stack":
-            s.add(f'<rect x="{ix}" y="{by}" width="{iw}" height="6" rx="3" fill="{t["graphite"]}"/>',
-                  f'<rect class="grow" x="{ix}" y="{by}" width="{iw}" height="6" rx="3" fill="{t["soft"]}" opacity=".55" style="animation-delay:{d}s"/>',
-                  f'<rect class="grow" x="{ix}" y="{by}" width="{n(iw * frac)}" height="6" rx="3" fill="{t["accent"]}" style="animation-delay:{d + .2}s"/>')
+        elif viz == "count":
+            # One tally mark per item, e.g. one per bug found.
+            pitch = iw / frac
+            for k in range(int(frac)):
+                s.add(f'<rect class="pop" x="{n(ix + k * pitch)}" y="{by - 2}" width="{n(pitch - 2.4)}" height="10" rx="1.5" '
+                      f'fill="{t["accent"]}" style="animation-delay:{n(d + k * .025)}s"/>')
     return s
 
 
@@ -643,7 +480,7 @@ def lesion_card(face: Face, theme: str) -> Svg:
 LAB = [
     ("NEXUS", "AI content intelligence SaaS"),
     ("Code Review Agent", "multi-agent PR reviews"),
-    ("Resume Analyzer", "3 agents, <400 ms, 39 tests"),
+    ("Resume Analyzer", "explainable ATS scoring, 80 tests"),
     ("AI Proxy Agent", "WhatsApp, calendar, leads"),
     ("Research Agent", "search, retrieval, citations"),
 ]
@@ -668,103 +505,14 @@ def lab_card(face: Face, theme: str) -> Svg:
     return s
 
 
-# ------------------------------------------------------------------ timeline
-
-def timeline(face: Face, theme: str) -> Svg:
-    s = Svg(face, THEMES[theme], 1000, 296, "Career timeline",
-            "Machine Learning Intern at Igeeks Technologies, June to July 2023. GenAI Engineer at ReinHealth, "
-            "July 2024 to February 2026. AI Agent Developer at Code Crew Studio since February 2026. "
-            "B.E. in AI and Machine Learning at NMAM Institute of Technology, 2020 to 2024. Executive PG "
-            "Certification in Data Science and AI, iHUB DivyaSampark IIT Roorkee, 2024 to 2026.")
-    t = s.t
-    x0, x1, y0, y1 = 170, 960, 2020.0, 2027.0
-
-    def X(year: float) -> float:
-        return x0 + (year - y0) / (y1 - y0) * (x1 - x0)
-
-    s.add(f'<rect x=".5" y=".5" width="999" height="295" rx="15.5" fill="{t["surface"]}" stroke="{t["line"]}"/>')
-    for yr in range(2020, 2027):
-        s.add(f'<path d="M{n(X(yr))} 52V270" stroke="{t["line"]}" stroke-dasharray="2 5"/>',
-              s.text(str(yr), X(yr), 40, 12.5, fill="faint", anchor="middle"))
-    now = X(2026.74)
-    s.css.append("@keyframes march{to{stroke-dashoffset:-14}}")
-    s.add(f'<path d="M{n(now)} 50V270" stroke="{t["accent"]}" stroke-dasharray="4 3" style="animation:march 1.2s linear infinite"/>',
-          s.text("NOW", now, 40, 12, w="b", fill="accent", anchor="middle", ls=1))
-    s.add(s.text("WORK", 32, 134, 12, w="m", fill="faint", ls=2), s.text("LEARN", 32, 250, 12, w="m", fill="faint", ls=2))
-
-    work = [
-        (2023.42, 2023.58, "ML Intern · Igeeks Technologies", "Jun – Jul 2023 · Bengaluru", False),
-        (2024.50, 2026.08, "GenAI Engineer · ReinHealth", "Jul 2024 – Feb 2026 · remote, US", False),
-        (2026.08, 2026.74, "AI Agent Developer · Code Crew Studio", "Feb 2026 – now · remote", True),
-    ]
-    for i, (a, b, role, when, current) in enumerate(work):
-        y = 64 + i * 52
-        xa, xb = X(a), X(b)
-        fill = t["accent"]
-        parts = [f'<rect class="grow" x="{n(xa)}" y="{y}" width="{n(max(xb - xa, 8))}" height="24" rx="5" fill="{fill}" '
-                 f'opacity="{1 if current else .55}" style="animation-delay:{n(.2 + i * .25)}s"/>']
-        if current:
-            parts.append(f'<path d="M{n(xb + 4)} {y + 12}H{x1}" stroke="{t["accent"]}" stroke-dasharray="3 4" opacity=".7"/>')
-            parts.append(f'<circle class="ping" cx="{n(xb)}" cy="{y + 12}" r="5" fill="{t["accent"]}" opacity="0"/>')
-        parts.append(s.text(role, xa - 12, y + 10, 14, w="m", anchor="end"))
-        parts.append(s.text(when, xa - 12, y + 27, 12, fill="muted", anchor="end"))
-        rise(s, .15 + i * .25, *parts, cls="fade")
-
-    s.add(f'<path d="M150 222.5H968" stroke="{t["line"]}"/>')
-    learn = [
-        (2020.60, 2024.45, "B.E. AI & ML · NMAM Institute of Technology", 13),
-        (2024.50, 2026.50, "PG · DS & AI · IIT Roorkee", 12),
-    ]
-    for i, (a, b, label, size) in enumerate(learn):
-        xa, xb = X(a), X(b)
-        rise(s, .9 + i * .25,
-             f'<rect class="grow" x="{n(xa)}" y="234" width="{n(xb - xa)}" height="30" rx="6" fill="{t["graphite"]}" '
-             f'stroke="{t["line"]}" style="animation-delay:{n(.9 + i * .25)}s"/>',
-             s.text(label, xa + 12, 253.5, size, w="m"), cls="fade")
-    return s
-
-
-# -------------------------------------------------------------------- footer
-
-def footer(face: Face, theme: str) -> Svg:
-    s = Svg(face, THEMES[theme], 1000, 200, "Let's build agents that ship.",
-            "Open to AI engineering roles, contracts and production agent builds.")
-    t = s.t
-    backdrop(s, glow=(500, 100, 420))
-    head = "Let's build agents that ship."
-    size = 34
-    w = tw(head, size)
-    rise(s, 0, s.text(head, 500, 94, size, w="b", anchor="middle"))
-    s.defs.append(f'<linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{t["accent"]}" stop-opacity="0"/>'
-                  f'<stop offset=".5" stop-color="{t["accent"]}"/><stop offset="1" stop-color="{t["accent"]}" stop-opacity="0"/></linearGradient>')
-    s.css.append(f"@keyframes sweep{{from{{transform:translateX({n(-w)}px)}}to{{transform:translateX({n(w)}px)}}}}")
-    s.defs.append(f'<clipPath id="ul"><rect x="{n(500 - w / 2)}" y="108" width="{n(w)}" height="3"/></clipPath>')
-    s.add(f'<rect x="{n(500 - w / 2)}" y="108" width="{n(w)}" height="3" rx="1.5" fill="{t["line"]}"/>',
-          f'<g clip-path="url(#ul)"><rect x="{n(500 - w / 2)}" y="108" width="{n(w)}" height="3" fill="url(#sweep)" '
-          f'style="animation:sweep 3.2s cubic-bezier(.77,0,.175,1) infinite"/></g>')
-    rise(s, .15, s.text("AI engineering roles · contracts · production agent builds", 500, 146, 14, fill="muted", anchor="middle"))
-    for side in (-1, 1):
-        xs = [500 + side * (w / 2 + 30 + k * 36) for k in range(4)]
-        xs = [x for x in xs if 24 < x < 976]
-        d = f"M{n(xs[-1])} 88H{n(xs[0])}"
-        s.add(f'<path d="{d}" stroke="{t["line"]}"/>',
-              s.pulse(d, abs(xs[-1] - xs[0]), 2.6, 0 if side < 0 else 1.3, dash=14, travel=.6))
-        for k, x in enumerate(xs):
-            s.add(f'<circle cx="{n(x)}" cy="88" r="{4 if k == 0 else 3}" fill="{t["panel"]}" stroke="{t["accent"] if k == 0 else t["line"]}"/>')
-    return s
-
-
 ASSETS = {
     "hero": hero,
-    "whoami": terminal,
     "impact": impact,
     "cortex": cortex_card,
     "ragchatbot": rag_card,
     "soap": soap_card,
     "lesion": lesion_card,
     "lab": lab_card,
-    "timeline": timeline,
-    "footer": footer,
 }
 
 

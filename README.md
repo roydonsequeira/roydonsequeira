@@ -8,7 +8,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img alt="Roydon Sequeira, GenAI Engineer and AI Agent Architect. I build AI agents that plan, retrieve and act, and know when to hand off to a human." src="assets/hero-dark.svg" width="100%">
+    <img alt="Roydon Sequeira, AI Agent Developer at Code Crew Studio. Previously GenAI Engineer at ReinHealth, a healthcare AI startup. Based in Udupi, India. Open to AI engineering roles and contracts." src="assets/hero-dark.svg" width="100%">
   </picture>
 </a>
 
@@ -19,35 +19,21 @@
   <a href="mailto:roydnsequeira@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email_me-0A0B0D?style=for-the-badge&logo=gmail&logoColor=00E6C3"></a>
 </p>
 
-<p align="center">
-  <kbd><a href="#whoami">whoami</a></kbd>&nbsp;
-  <kbd><a href="#open-source">open source</a></kbd>&nbsp;
-  <kbd><a href="#recently-shipped">recently shipped</a></kbd>&nbsp;
-  <kbd><a href="#how-i-build-agents">how I build agents</a></kbd>&nbsp;
-  <kbd><a href="#experience">experience</a></kbd>&nbsp;
-  <kbd><a href="#stack">stack</a></kbd>&nbsp;
-  <kbd><a href="#activity">activity</a></kbd>
-</p>
+I build AI agents at Code Crew Studio, currently a WhatsApp onboarding agent on FastAPI and PostgreSQL. Before that I led a patient-intake agent at ReinHealth, a healthcare AI startup. It ran on local models, so no patient records went to outside APIs.
 
-## whoami
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/whoami-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/whoami-light.svg">
-  <img alt="Role: AI Agent Developer at Code Crew Studio. Previously GenAI Engineer at ReinHealth, a stealth AI healthcare startup. Focus: multi-agent systems, LLM orchestration, RAG. Stack: Python, LangChain, Qdrant, FastAPI, Docker. Runtime: Ollama for local-first, private inference. 2+ years shipping production AI. Based in Udupi, Karnataka, India. Open to AI engineering roles and contracts." src="assets/whoami-dark.svg" width="100%">
-</picture>
+My open-source project is CORTEX, an agent that runs entirely on your own machine. Running it through 187 live conversations with a 7B model turned up 27 bugs its unit tests had missed. I wrote about what they taught me in [187 live prompts, 27 bugs](https://dev.to/roydonsequeira/187-live-prompts-27-bugs-what-testing-my-local-ai-agent-against-a-real-7b-model-taught-me-3h6).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/impact-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/impact-light.svg">
-  <img alt="Impact: about 70% less manual patient-intake workload; patient intake down from 15 minutes to under 5; zero patient records sent to external APIs; 505 tests behind CORTEX (318 unit plus 187 live conversations)." src="assets/impact-dark.svg" width="100%">
+  <img alt="Impact: about 70% less manual patient-intake work (estimated); patient intake down from 15 minutes to under 5; zero patient records sent to external APIs; 27 bugs in CORTEX found by 187 live conversations that its unit tests had missed." src="assets/impact-dark.svg" width="100%">
 </picture>
 
-<sub>Intake figures come from the production medical agent I led at ReinHealth. Test counts come from CORTEX's unit suite and live test battery.</sub>
+<sub>Intake figures are estimates from the production agent I led at ReinHealth. The bug count comes from CORTEX's <a href="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/tree/main/evals/live_battery">live test battery</a>.</sub>
 
 ## Open source
 
-Local-first by default. Most of this runs entirely on hardware you own, with no API keys.
+Most of these run entirely on your own hardware, with no API keys.
 
 <a href="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework">
   <picture>
@@ -60,12 +46,18 @@ Local-first by default. Most of this runs entirely on hardware you own, with no 
 <p align="center">
   <a href="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/actions/workflows/ci.yml"><img alt="CI status" src="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/actions/workflows/ci.yml/badge.svg?branch=main"></a>
   <a href="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/roydonsequeira/CORTEX-Private-Intelligence-Framework?style=flat-square&labelColor=0A0B0D&color=00E6C3"></a>
-  <a href="https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework/tree/main/evals/live_battery"><img alt="Tests: 318 unit and 187 live" src="https://img.shields.io/badge/tests-318_unit_%2B_187_live-00E6C3?style=flat-square&labelColor=0A0B0D"></a>
   <img alt="License: MIT" src="https://img.shields.io/github/license/roydonsequeira/CORTEX-Private-Intelligence-Framework?style=flat-square&labelColor=0A0B0D&color=00E6C3">
 </p>
 
+**Why it holds up on a 7B model.** Small models don't reliably follow rules that exist only in the prompt. In live testing with `qwen2.5:7b`, the model claimed it had saved a file without calling the tool, and followed an instruction hidden in text it was asked to summarize. So CORTEX enforces the rules in code:
+
+- Plans that need no tools run with no tool schemas at all, and destructive plans become refusals before anything executes.
+- Pasted or quoted text is treated as data, so instructions hidden inside it can't trigger a tool.
+- Web fetch reaches public hosts only. Loopback, private-network and cloud-metadata addresses are refused after DNS resolution and on every redirect.
+- Memory stores only durable facts you state about yourself.
+
 <details>
-<summary><b>How CORTEX works</b>: the architecture, the guardrails, and a quick start</summary>
+<summary><b>Architecture and quick start</b></summary>
 <br>
 
 ```mermaid
@@ -80,13 +72,6 @@ flowchart LR
     API -. OTLP spans .-> J["Jaeger"]
 ```
 
-**Why it behaves on a 7B model.** Small models break rules that prompts ask them to follow, so CORTEX enforces the rules in code:
-
-- Plans that need no tools run with no tool schemas at all, and destructive plans become refusals before anything executes.
-- Pasted or quoted text is treated as data, so instructions hidden inside it can't trigger a tool.
-- Web fetch reaches public hosts only. Loopback, private-network and cloud-metadata addresses are refused after DNS resolution and on every redirect.
-- Memory stores only durable facts you state about yourself.
-
 ```bash
 git clone https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework.git && cd CORTEX-Private-Intelligence-Framework
 ollama pull qwen2.5:7b && ollama pull nomic-embed-text
@@ -100,7 +85,7 @@ cd ui && npm install && npm run dev                   # UI on :3000
   <a href="https://github.com/roydonsequeira/RagChatbot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ragchatbot-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/ragchatbot-light.svg"><img alt="RagChatbot: chat with your own PDFs, scans and Word files entirely on your machine, with OCR ingestion, local embeddings and streamed answers." src="assets/ragchatbot-dark.svg" width="49%"></picture></a>
   <a href="https://github.com/roydonsequeira/clinicalNote-SOAP"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/soap-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/soap-light.svg"><img alt="Clinical SOAP Notes: n8n workflows that turn clinical text or voice into structured SOAP notes with a local LLM." src="assets/soap-dark.svg" width="49%"></picture></a>
   <a href="https://github.com/roydonsequeira/Skin-Lesion-Segmentation-in-TensorFlow-2.0"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/lesion-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/lesion-light.svg"><img alt="Skin Lesion Segmentation: U-Net in PyTorch and ResU-Net in TensorFlow 2 on 2,594 ISIC 2018 dermoscopy images, with a Streamlit demo." src="assets/lesion-dark.svg" width="49%"></picture></a>
-  <a href="https://roydonsequeira.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/lab-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/lab-light.svg"><img alt="In the lab, private builds: NEXUS AI content intelligence SaaS; a multi-agent code review agent; an AI resume analyzer with 3 agents, under 400 ms and 39 tests; an AI proxy agent for WhatsApp, calendar and leads; a research agent with search, retrieval and citations." src="assets/lab-dark.svg" width="49%"></picture></a>
+  <a href="https://roydonsequeira.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/lab-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/lab-light.svg"><img alt="In the lab, private builds: NEXUS AI content intelligence SaaS; a multi-agent code review agent; an AI resume analyzer with explainable ATS scoring and 80 tests; an AI proxy agent for WhatsApp, calendar and leads; a research agent with search, retrieval and citations." src="assets/lab-dark.svg" width="49%"></picture></a>
 </p>
 
 ### Recently shipped
@@ -114,69 +99,16 @@ cd ui && npm install && npm run dev                   # UI on :3000
 | [**clinicalNote-SOAP**](https://github.com/roydonsequeira/clinicalNote-SOAP) | n8n workflows for AI-powered Clinical SOAP note generation (TTT, STT, TTS) | <code>2026-03-25</code> |
 <!-- recent-repos:end -->
 
-<sub>Refreshed daily from the GitHub API by <a href=".github/workflows/readme-sync.yml">readme-sync</a>. New public repositories show up here on their own.</sub>
-
-## How I build agents
-
-```mermaid
-flowchart LR
-    IN["User or trigger"] --> ORCH["Orchestrator"]
-    ORCH --> PLAN["Plan and reason"]
-    ORCH --> RET["Retrieve context"]
-    ORCH --> TOOLS["Call tools"]
-    RET --> VEC["Qdrant / ChromaDB"]
-    TOOLS --> SYS["APIs / databases"]
-    PLAN --> CHECK{"Validate and guardrail"}
-    VEC --> CHECK
-    SYS --> CHECK
-    CHECK -->|pass| OUT["Answer or action"]
-    CHECK -->|fail| ESC["Fallback or human handoff"]
-```
-
-| Principle | What it looks like in production |
-| --- | --- |
-| **Rules live in code, not prompts** | CORTEX turns destructive plans into refusals before any tool runs, and pasted text can never trigger an action. |
-| **Keep the data home** | Local inference on Ollama: the ReinHealth intake agent sent zero patient records to external APIs. |
-| **Ground every answer** | Retrieval over Qdrant, ChromaDB and PostgreSQL instead of trusting model memory. |
-| **Escalate instead of guessing** | Emergency-symptom escalation, input validation and audit logging in the clinical agent. |
-| **Trace everything** | OpenTelemetry spans across model, tool and memory calls, so a failure is debugged as a system rather than guessed at as a prompt. |
+<sub>Refreshed daily from the GitHub API by <a href=".github/workflows/readme-sync.yml">readme-sync</a>.</sub>
 
 ## Experience
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/timeline-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/timeline-light.svg">
-  <img alt="Career timeline: ML Intern at Igeeks Technologies (Jun to Jul 2023); GenAI Engineer at ReinHealth (Jul 2024 to Feb 2026); AI Agent Developer at Code Crew Studio (Feb 2026 to now). B.E. in AI and Machine Learning at NMAM Institute of Technology (2020 to 2024); Executive PG Certification in Data Science and AI, iHUB DivyaSampark, IIT Roorkee (2024 to 2026)." src="assets/timeline-dark.svg" width="100%">
-</picture>
-
-<details>
-<summary><b>AI Agent Developer</b> · Code Crew Studio · <i>Feb 2026 – present · Mumbai (remote)</i></summary>
-<br>
-
-- Built and maintain a production onboarding agent on the official **WhatsApp Business API** that runs structured intake conversations, classifies user problems and returns analyzed feedback.
-- Engineered a multi-turn query system with persistent context across sessions, using **LangChain** for orchestration-heavy flows and direct LLM API calls where latency matters.
-- Built **FastAPI** services on **PostgreSQL** for agent state, conversation history and structured customer records.
-
-</details>
-
-<details>
-<summary><b>GenAI Engineer</b> · ReinHealth, stealth AI healthcare startup · <i>Jul 2024 – Feb 2026 · Colorado, US (remote)</i></summary>
-<br>
-
-- Led end-to-end delivery of a production **autonomous medical intake agent** over text and voice, cutting manual intake work by an estimated **70%** and average intake time from **15 minutes to under 5**.
-- Architected an LLM orchestration layer on local **Ollama** inference (intent analysis, follow-up selection, tool execution, grounded synthesis), so **zero patient records** reached external APIs.
-- Built a privacy-first **RAG** pipeline on **Qdrant** with PostgreSQL, and automated speech-to-text clinical notes, TTS summaries and conflict-aware scheduling in **n8n**.
-- Hardened the platform for clinical use with input validation, emergency-symptom escalation and audit logging, behind a single REST API for agents, workflows and frontend.
-
-</details>
-
-<details>
-<summary><b>Machine Learning Intern</b> · Igeeks Technologies · <i>Jun – Jul 2023 · Bengaluru</i></summary>
-<br>
-
-- Built CNN, AlexNet and MLP image-classification pipelines on custom datasets, with OpenCV preprocessing and hyperparameter tuning.
-
-</details>
+- **AI Agent Developer, Code Crew Studio** · Feb 2026 – present · remote<br>
+  Production onboarding agent on the WhatsApp Business API, with FastAPI and PostgreSQL for agent state and conversation history.
+- **GenAI Engineer, ReinHealth** (stealth healthcare AI startup) · Jul 2024 – Feb 2026 · remote, US<br>
+  Led a medical intake agent over text and voice on local Ollama models, with RAG on Qdrant and PostgreSQL, and n8n automations for clinical notes and scheduling.
+- **Machine Learning Intern, Igeeks Technologies** · Jun – Jul 2023 · Bengaluru<br>
+  CNN, AlexNet and MLP image classifiers with OpenCV preprocessing.
 
 **Education:** B.E. in Artificial Intelligence & Machine Learning, NMAM Institute of Technology (2020–2024) · Executive PG Certification in Data Science & AI, iHUB DivyaSampark, IIT Roorkee (2024–2026)
 
@@ -184,7 +116,7 @@ flowchart LR
 
 | Layer | Tools |
 | --- | --- |
-| **Agents & LLMs** | LangChain · ReAct · LATS · supervisor–worker orchestration · Ollama · Claude · Gemini · OpenAI · Hugging Face · STT/TTS |
+| **Agents & LLMs** | LangChain · ReAct · Ollama · Claude · Gemini · OpenAI · Hugging Face · STT/TTS |
 | **Retrieval** | Qdrant · ChromaDB · BGE and nomic embeddings · semantic search · PostgreSQL · Redis |
 | **Backend** | Python · FastAPI · Flask · Pydantic · SQL · REST · SSE streaming |
 | **Automation** | n8n · WhatsApp Business API · Twilio |
@@ -192,55 +124,4 @@ flowchart LR
 | **Ship & observe** | Docker · Linux · GitHub Actions · OpenTelemetry · Vercel · ruff · mypy |
 | **Agent UIs** | Next.js · TypeScript · Tailwind CSS |
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=python%2Cfastapi%2Cflask%2Cpostgres%2Credis%2Cdocker%2Clinux%2Cgithubactions%2Cpytorch%2Ctensorflow%2Csklearn%2Copencv%2Cnextjs%2Cts%2Ctailwind%2Cvercel&perline=16&theme=dark">
-    <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=python%2Cfastapi%2Cflask%2Cpostgres%2Credis%2Cdocker%2Clinux%2Cgithubactions%2Cpytorch%2Ctensorflow%2Csklearn%2Copencv%2Cnextjs%2Cts%2Ctailwind%2Cvercel&perline=16&theme=light">
-    <img alt="Python, FastAPI, Flask, PostgreSQL, Redis, Docker, Linux, GitHub Actions, PyTorch, TensorFlow, scikit-learn, OpenCV, Next.js, TypeScript, Tailwind CSS, Vercel" src="https://skillicons.dev/icons?i=python%2Cfastapi%2Cflask%2Cpostgres%2Credis%2Cdocker%2Clinux%2Cgithubactions%2Cpytorch%2Ctensorflow%2Csklearn%2Copencv%2Cnextjs%2Cts%2Ctailwind%2Cvercel&perline=16&theme=dark" width="100%">
-  </picture>
-</p>
-
-<p align="center">
-  <img alt="LangChain" src="https://img.shields.io/badge/LangChain-0A0B0D?style=flat-square&logo=langchain&logoColor=00E6C3">
-  <img alt="Ollama" src="https://img.shields.io/badge/Ollama-0A0B0D?style=flat-square&logo=ollama&logoColor=00E6C3">
-  <img alt="Qdrant" src="https://img.shields.io/badge/Qdrant-0A0B0D?style=flat-square&logo=qdrant&logoColor=00E6C3">
-  <img alt="n8n" src="https://img.shields.io/badge/n8n-0A0B0D?style=flat-square&logo=n8n&logoColor=00E6C3">
-  <img alt="Claude" src="https://img.shields.io/badge/Claude-0A0B0D?style=flat-square&logo=claude&logoColor=00E6C3">
-  <img alt="Gemini" src="https://img.shields.io/badge/Gemini-0A0B0D?style=flat-square&logo=googlegemini&logoColor=00E6C3">
-  <img alt="Hugging Face" src="https://img.shields.io/badge/Hugging_Face-0A0B0D?style=flat-square&logo=huggingface&logoColor=00E6C3">
-  <img alt="OpenTelemetry" src="https://img.shields.io/badge/OpenTelemetry-0A0B0D?style=flat-square&logo=opentelemetry&logoColor=00E6C3">
-  <img alt="WhatsApp Business API" src="https://img.shields.io/badge/WhatsApp_API-0A0B0D?style=flat-square&logo=whatsapp&logoColor=00E6C3">
-</p>
-
-## Activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/roydonsequeira/roydonsequeira/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/roydonsequeira/roydonsequeira/output/github-contribution-grid-snake.svg">
-  <img alt="Contribution graph being eaten by a snake" src="https://raw.githubusercontent.com/roydonsequeira/roydonsequeira/output/github-contribution-grid-snake-dark.svg" width="100%">
-</picture>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=roydonsequeira&background=0A0B0D&border=242931&stroke=242931&ring=00E6C3&fire=00E6C3&currStreakNum=EDEFF2&sideNums=EDEFF2&currStreakLabel=00E6C3&sideLabels=8B93A0&dates=5C636E&border_radius=16">
-    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=roydonsequeira&background=FFFFFF&border=DCD8CF&stroke=DCD8CF&ring=00735F&fire=00735F&currStreakNum=121417&sideNums=121417&currStreakLabel=00735F&sideLabels=555A63&dates=7C8089&border_radius=16">
-    <img alt="GitHub contribution streak" src="https://streak-stats.demolab.com/?user=roydonsequeira&background=0A0B0D&border=242931&stroke=242931&ring=00E6C3&fire=00E6C3&currStreakNum=EDEFF2&sideNums=EDEFF2&currStreakLabel=00E6C3&sideLabels=8B93A0&dates=5C636E&border_radius=16" width="70%">
-  </picture>
-</p>
-
-<br>
-
-<a href="mailto:roydnsequeira@gmail.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/footer-light.svg">
-    <img alt="Let's build agents that ship. Open to AI engineering roles, contracts and production agent builds." src="assets/footer-dark.svg" width="100%">
-  </picture>
-</a>
-
-<p align="center">
-  <a href="mailto:roydnsequeira@gmail.com"><img alt="Email me" src="https://img.shields.io/badge/roydnsequeira@gmail.com-0A0B0D?style=for-the-badge&logo=gmail&logoColor=00E6C3"></a>
-  <a href="https://roydonsequeira.com"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-0A0B0D?style=for-the-badge&logo=googlechrome&logoColor=00E6C3"></a>
-  <br><br>
-  <img alt="Profile views" src="https://komarev.com/ghpvc/?username=roydonsequeira&color=00735f&style=flat-square&label=profile+views">
-</p>
+Open to AI engineering roles and contract work: [roydnsequeira@gmail.com](mailto:roydnsequeira@gmail.com)
