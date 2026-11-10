@@ -93,7 +93,7 @@ cd ui && npm install && npm run dev                   # UI on :3000
 <!-- recent-repos:start -->
 | Project | What it is | Last push |
 | --- | --- | --- |
-| [**CORTEX-Private-Intelligence-Framework**](https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework)<br><sub>Python · ★ 6</sub> | Private, local-first AI agent: planning, sandboxed tools, four-tier memory, streaming UI and OpenTelemetry. Runs entirely on your machine with Ollama. | <code>2026-11-08</code> |
+| [**CORTEX-Private-Intelligence-Framework**](https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework)<br><sub>Python · ★ 6</sub> | Private, local-first AI agent: planning, sandboxed tools, four-tier memory, streaming UI and OpenTelemetry. Runs entirely on your machine with Ollama. | <code>2026-11-10</code> |
 | [**Skin-Lesion-Segmentation-in-TensorFlow-2.0**](https://github.com/roydonsequeira/Skin-Lesion-Segmentation-in-TensorFlow-2.0)<br><sub>Python</sub> | Skin lesion segmentation on ISIC 2018 using U-Net (PyTorch) and ResU-Net (TensorFlow 2). Final year project. | <code>2026-10-18</code> |
 | [**RagChatbot**](https://github.com/roydonsequeira/RagChatbot)<br><sub>Python</sub> | Local RAG chatbot: Ollama LLM, ChromaDB vector store, OCR/PDF ingestion, Next.js UI | <code>2026-04-09</code> |
 | [**clinicalNote-SOAP**](https://github.com/roydonsequeira/clinicalNote-SOAP) | n8n workflows that turn clinical text or voice into structured SOAP notes with a local LLM | <code>2026-03-25</code> |
