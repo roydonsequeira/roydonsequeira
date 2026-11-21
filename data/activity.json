@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "about": "Public GitHub activity of github.com/roydonsequeira, written daily for Vaani on roydonsequeira.com. Dates are in India time (UTC+05:30).",
- "as_of": "2026-11-21",
- "generated_at": "2026-11-21T05:50Z",
+ "as_of": "2026-11-22",
+ "generated_at": "2026-11-21T23:16Z",
  "upstream": {
   "merged": 49,
   "open": 21,
@@ -109,29 +109,6 @@
      "pushes": 1
     }
    ]
-  },
-  {
-   "date": "2026-11-15",
-   "merged": [
-    {
-     "repo": "career-ops-hq/career-ops",
-     "title": "fix(eval): exit 1 instead of aborting on Windows when an Ollama run fails",
-     "url": "https://github.com/career-ops-hq/career-ops/pull/7096"
-    }
-   ],
-   "opened": [
-    {
-     "repo": "ray-project/ray",
-     "title": "[data][llm] Add the generation prompt after tool and system messages in ChatTemplateStage",
-     "url": "https://github.com/ray-project/ray/pull/68168"
-    }
-   ],
-   "pushed": [
-    {
-     "repo": "CORTEX-Private-Intelligence-Framework",
-     "pushes": 1
-    }
-   ]
   }
  ],
  "open_pull_requests": [
@@ -190,7 +167,7 @@
    "url": "https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework",
    "description": "Private, local-first AI agent: planning, sandboxed tools, four-tier memory, streaming UI and OpenTelemetry. Runs entirely on your machine with Ollama.",
    "language": "Python",
-   "stars": 6,
+   "stars": 7,
    "pushed": "2026-11-17"
   },
   {
