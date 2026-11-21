@@ -1,0 +1,209 @@
+{
+ "schema": 1,
+ "about": "Public GitHub activity of github.com/roydonsequeira, written daily for Vaani on roydonsequeira.com. Dates are in India time (UTC+05:30).",
+ "as_of": "2026-11-21",
+ "generated_at": "2026-11-21T04:59Z",
+ "upstream": {
+  "merged": 49,
+  "open": 20,
+  "projects": 10,
+  "since": "2026-10-03",
+  "by_project": [
+   {
+    "repo": "career-ops-hq/career-ops",
+    "merged": 29
+   },
+   {
+    "repo": "langchain-ai/deepagents",
+    "merged": 6
+   },
+   {
+    "repo": "promptfoo/promptfoo",
+    "merged": 5
+   },
+   {
+    "repo": "StarTrail-org/PixelRAG",
+    "merged": 2
+   },
+   {
+    "repo": "unslothai/unsloth",
+    "merged": 2
+   },
+   {
+    "repo": "future-agi/future-agi",
+    "merged": 1
+   },
+   {
+    "repo": "langfuse/langfuse",
+    "merged": 1
+   },
+   {
+    "repo": "microsoft/PyRIT",
+    "merged": 1
+   },
+   {
+    "repo": "open-webui/oikb",
+    "merged": 1
+   },
+   {
+    "repo": "pydantic/pydantic-ai",
+    "merged": 1
+   }
+  ]
+ },
+ "days": [
+  {
+   "date": "2026-11-19",
+   "merged": [
+    {
+     "repo": "future-agi/future-agi",
+     "title": "fix(gateway): keep stdio MCP servers running after connect",
+     "url": "https://github.com/future-agi/future-agi/pull/3404"
+    }
+   ],
+   "opened": [],
+   "pushed": []
+  },
+  {
+   "date": "2026-11-17",
+   "merged": [
+    {
+     "repo": "StarTrail-org/PixelRAG",
+     "title": "fix(render): fall back to zstandard whenever zstd can't be launched",
+     "url": "https://github.com/StarTrail-org/PixelRAG/pull/212"
+    },
+    {
+     "repo": "StarTrail-org/PixelRAG",
+     "title": "fix(embed): embed CPU/MPS tiles with the GPU embedder's prompt and pooling",
+     "url": "https://github.com/StarTrail-org/PixelRAG/pull/211"
+    }
+   ],
+   "opened": [],
+   "pushed": []
+  },
+  {
+   "date": "2026-11-16",
+   "merged": [],
+   "opened": [
+    {
+     "repo": "OpenBMB/UltraRAG",
+     "title": "fix(prompt): stop HTML-escaping prompt values",
+     "url": "https://github.com/OpenBMB/UltraRAG/pull/583"
+    }
+   ],
+   "pushed": [
+    {
+     "repo": "CORTEX-Private-Intelligence-Framework",
+     "pushes": 1
+    }
+   ]
+  },
+  {
+   "date": "2026-11-15",
+   "merged": [
+    {
+     "repo": "career-ops-hq/career-ops",
+     "title": "fix(eval): exit 1 instead of aborting on Windows when an Ollama run fails",
+     "url": "https://github.com/career-ops-hq/career-ops/pull/7096"
+    }
+   ],
+   "opened": [
+    {
+     "repo": "ray-project/ray",
+     "title": "[data][llm] Add the generation prompt after tool and system messages in ChatTemplateStage",
+     "url": "https://github.com/ray-project/ray/pull/68168"
+    }
+   ],
+   "pushed": [
+    {
+     "repo": "CORTEX-Private-Intelligence-Framework",
+     "pushes": 1
+    }
+   ]
+  }
+ ],
+ "open_pull_requests": [
+  {
+   "repo": "OpenBMB/UltraRAG",
+   "title": "fix(prompt): stop HTML-escaping prompt values",
+   "url": "https://github.com/OpenBMB/UltraRAG/pull/583",
+   "opened": "2026-11-16"
+  },
+  {
+   "repo": "ray-project/ray",
+   "title": "[data][llm] Add the generation prompt after tool and system messages in ChatTemplateStage",
+   "url": "https://github.com/ray-project/ray/pull/68168",
+   "opened": "2026-11-15"
+  },
+  {
+   "repo": "LazyAGI/LazyLLM",
+   "title": "fix(rag): keep KeywordFilter keywords from leaking between filters",
+   "url": "https://github.com/LazyAGI/LazyLLM/pull/1486",
+   "opened": "2026-11-14"
+  },
+  {
+   "repo": "NVIDIA/NeMo-Retriever",
+   "title": "fix(judge): ignore ratings inside an unfinished reasoning block",
+   "url": "https://github.com/NVIDIA/NeMo-Retriever/pull/2852",
+   "opened": "2026-11-13"
+  },
+  {
+   "repo": "pytorch/pytorch",
+   "title": "Use torch.finfo(dtype).eps as F.normalize's default eps",
+   "url": "https://github.com/pytorch/pytorch/pull/204410",
+   "opened": "2026-11-11"
+  },
+  {
+   "repo": "pytorch/pytorch",
+   "title": "[checkpoint] Add register_determinism_check for custom determinism checks",
+   "url": "https://github.com/pytorch/pytorch/pull/203194",
+   "opened": "2026-11-03"
+  },
+  {
+   "repo": "onnx/onnx",
+   "title": "fix(reference): keep raw QK output for Attention mode 0 with softcap",
+   "url": "https://github.com/onnx/onnx/pull/8715",
+   "opened": "2026-10-31"
+  },
+  {
+   "repo": "agno-agi/agno",
+   "title": "fix: stop the background concurrency cache from keeping closed event loops alive",
+   "url": "https://github.com/agno-agi/agno/pull/11324",
+   "opened": "2026-10-27"
+  }
+ ],
+ "repositories": [
+  {
+   "name": "CORTEX-Private-Intelligence-Framework",
+   "url": "https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework",
+   "description": "Private, local-first AI agent: planning, sandboxed tools, four-tier memory, streaming UI and OpenTelemetry. Runs entirely on your machine with Ollama.",
+   "language": "Python",
+   "stars": 6,
+   "pushed": "2026-11-17"
+  },
+  {
+   "name": "Skin-Lesion-Segmentation-in-TensorFlow-2.0",
+   "url": "https://github.com/roydonsequeira/Skin-Lesion-Segmentation-in-TensorFlow-2.0",
+   "description": "Skin lesion segmentation on ISIC 2018 using U-Net (PyTorch) and ResU-Net (TensorFlow 2). Final year project.",
+   "language": "Python",
+   "stars": 0,
+   "pushed": "2026-10-18"
+  },
+  {
+   "name": "RagChatbot",
+   "url": "https://github.com/roydonsequeira/RagChatbot",
+   "description": "Local RAG chatbot: Ollama LLM, ChromaDB vector store, OCR/PDF ingestion, Next.js UI",
+   "language": "Python",
+   "stars": 0,
+   "pushed": "2026-04-09"
+  },
+  {
+   "name": "clinicalNote-SOAP",
+   "url": "https://github.com/roydonsequeira/clinicalNote-SOAP",
+   "description": "n8n workflows that turn clinical text or voice into structured SOAP notes with a local LLM",
+   "language": null,
+   "stars": 0,
+   "pushed": "2026-03-25"
+  }
+ ]
+}

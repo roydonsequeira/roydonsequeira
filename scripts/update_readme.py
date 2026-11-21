@@ -49,10 +49,11 @@ def table(repos: list[dict]) -> str:
     rows = ["| Project | What it is | Last push |", "| --- | --- | --- |"]
     for r in repos:
         pushed = datetime.fromisoformat(r["pushed_at"].replace("Z", "+00:00"))
-        meta = " · ".join(filter(None, [r["language"], f"★ {r['stargazers_count']}" if r["stargazers_count"] else ""]))
+        stars = r["stargazers_count"]
+        meta = " · ".join(filter(None, [r["language"], f"{stars} star{'s' if stars != 1 else ''}" if stars else ""]))
         meta = f"<br><sub>{meta}</sub>" if meta else ""
         rows.append(
-            f"| [**{r['name']}**]({r['html_url']}){meta} | {cell(r['description'] or '—')} | "
+            f"| [{r['name']}]({r['html_url']}){meta} | {cell(r['description'] or '')} | "
             f"<code>{pushed:%Y-%m-%d}</code> |"
         )
     return "\n".join(rows)

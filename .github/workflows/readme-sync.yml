@@ -2,13 +2,16 @@ name: README sync
 
 on:
   schedule:
-    - cron: "17 3 * * *"     # daily, after the snake refresh
+    - cron: "17 18 * * *"    # daily at 18:17 UTC (23:47 in India), near the end of the day data/activity.json reports
   workflow_dispatch: {}
   push:
     branches:
       - main
     paths:
       - scripts/update_readme.py
+      - scripts/build_assets.py
+      - scripts/activity.py
+      - scripts/glyphs.json
       - .github/workflows/readme-sync.yml
 
 permissions:
@@ -29,13 +32,25 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # The runner has neither font, so the card is set from scripts/glyphs.json.
+      - name: Redraw the merged pull request chart
+        run: python3 scripts/build_assets.py upstream
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Write the public activity feed for Vaani
+        run: python3 scripts/activity.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit if changed
         run: |
-          if git diff --quiet -- README.md; then
-            echo "README.md unchanged"
+          git add README.md assets/upstream-dark.svg assets/upstream-light.svg data/activity.json
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "chore: refresh recently shipped repositories"
+          git commit -m "chore: refresh README data and activity feed"
           git push
