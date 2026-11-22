@@ -1,17 +1,17 @@
 {
  "schema": 1,
  "about": "Public GitHub activity of github.com/roydonsequeira, written daily for Vaani on roydonsequeira.com. Dates are in India time (UTC+05:30).",
- "as_of": "2026-11-22",
- "generated_at": "2026-11-21T23:16Z",
+ "as_of": "2026-11-23",
+ "generated_at": "2026-11-22T23:37Z",
  "upstream": {
-  "merged": 49,
+  "merged": 50,
   "open": 21,
   "projects": 10,
   "since": "2026-10-03",
   "by_project": [
    {
     "repo": "career-ops-hq/career-ops",
-    "merged": 29
+    "merged": 30
    },
    {
     "repo": "langchain-ai/deepagents",
@@ -53,6 +53,24 @@
  },
  "days": [
   {
+   "date": "2026-11-22",
+   "merged": [
+    {
+     "repo": "career-ops-hq/career-ops",
+     "title": "fix(audit-portals): check the --baseline file before fetching any board",
+     "url": "https://github.com/career-ops-hq/career-ops/pull/7576"
+    }
+   ],
+   "opened": [
+    {
+     "repo": "career-ops-hq/career-ops",
+     "title": "fix(audit-portals): check the --baseline file before fetching any board",
+     "url": "https://github.com/career-ops-hq/career-ops/pull/7576"
+    }
+   ],
+   "pushed": []
+  },
+  {
    "date": "2026-11-21",
    "merged": [],
    "opened": [
@@ -92,23 +110,6 @@
    ],
    "opened": [],
    "pushed": []
-  },
-  {
-   "date": "2026-11-16",
-   "merged": [],
-   "opened": [
-    {
-     "repo": "OpenBMB/UltraRAG",
-     "title": "fix(prompt): stop HTML-escaping prompt values",
-     "url": "https://github.com/OpenBMB/UltraRAG/pull/583"
-    }
-   ],
-   "pushed": [
-    {
-     "repo": "CORTEX-Private-Intelligence-Framework",
-     "pushes": 1
-    }
-   ]
   }
  ],
  "open_pull_requests": [
