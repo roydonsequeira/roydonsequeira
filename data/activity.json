@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "about": "Public GitHub activity of github.com/roydonsequeira, written daily for Vaani on roydonsequeira.com. Dates are in India time (UTC+05:30).",
- "as_of": "2026-11-23",
- "generated_at": "2026-11-22T23:37Z",
+ "as_of": "2026-11-24",
+ "generated_at": "2026-11-24T03:57Z",
  "upstream": {
   "merged": 50,
   "open": 21,
@@ -89,23 +89,6 @@
      "repo": "future-agi/future-agi",
      "title": "fix(gateway): keep stdio MCP servers running after connect",
      "url": "https://github.com/future-agi/future-agi/pull/3404"
-    }
-   ],
-   "opened": [],
-   "pushed": []
-  },
-  {
-   "date": "2026-11-17",
-   "merged": [
-    {
-     "repo": "StarTrail-org/PixelRAG",
-     "title": "fix(render): fall back to zstandard whenever zstd can't be launched",
-     "url": "https://github.com/StarTrail-org/PixelRAG/pull/212"
-    },
-    {
-     "repo": "StarTrail-org/PixelRAG",
-     "title": "fix(embed): embed CPU/MPS tiles with the GPU embedder's prompt and pooling",
-     "url": "https://github.com/StarTrail-org/PixelRAG/pull/211"
     }
    ],
    "opened": [],

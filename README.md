@@ -42,7 +42,7 @@ My open-source project is CORTEX, an agent that runs entirely on your own machin
   </picture>
 </a>
 
-<sub>Refreshed daily from the GitHub search API by <a href=".github/workflows/readme-sync.yml">readme-sync</a>. Counts as of 2026-11-22; the chart links to the live list of every merged pull request.</sub>
+<sub>Refreshed daily from the GitHub search API by <a href=".github/workflows/readme-sync.yml">readme-sync</a>. Counts as of 2026-11-24; the chart links to the live list of every merged pull request.</sub>
 <!-- upstream:end -->
 
 <a href="https://roydonsequeira.com">
