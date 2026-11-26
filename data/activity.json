@@ -1,11 +1,11 @@
 {
  "schema": 1,
  "about": "Public GitHub activity of github.com/roydonsequeira, written daily for Vaani on roydonsequeira.com. Dates are in India time (UTC+05:30).",
- "as_of": "2026-11-25",
- "generated_at": "2026-11-25T02:29Z",
+ "as_of": "2026-11-26",
+ "generated_at": "2026-11-26T01:47Z",
  "upstream": {
   "merged": 50,
-  "open": 21,
+  "open": 22,
   "projects": 10,
   "since": "2026-10-03",
   "by_project": [
@@ -53,6 +53,18 @@
  },
  "days": [
   {
+   "date": "2026-11-25",
+   "merged": [],
+   "opened": [
+    {
+     "repo": "career-ops-hq/career-ops",
+     "title": "fix(application-answers): stop --read-draft at the archived posting",
+     "url": "https://github.com/career-ops-hq/career-ops/pull/7805"
+    }
+   ],
+   "pushed": []
+  },
+  {
    "date": "2026-11-22",
    "merged": [
     {
@@ -81,21 +93,15 @@
     }
    ],
    "pushed": []
-  },
-  {
-   "date": "2026-11-19",
-   "merged": [
-    {
-     "repo": "future-agi/future-agi",
-     "title": "fix(gateway): keep stdio MCP servers running after connect",
-     "url": "https://github.com/future-agi/future-agi/pull/3404"
-    }
-   ],
-   "opened": [],
-   "pushed": []
   }
  ],
  "open_pull_requests": [
+  {
+   "repo": "career-ops-hq/career-ops",
+   "title": "fix(application-answers): stop --read-draft at the archived posting",
+   "url": "https://github.com/career-ops-hq/career-ops/pull/7805",
+   "opened": "2026-11-25"
+  },
   {
    "repo": "microsoft/PyRIT",
    "title": "FIX: Map dotted and over-long MCP tool names to valid tool names",
@@ -137,12 +143,6 @@
    "title": "[checkpoint] Add register_determinism_check for custom determinism checks",
    "url": "https://github.com/pytorch/pytorch/pull/203194",
    "opened": "2026-11-03"
-  },
-  {
-   "repo": "onnx/onnx",
-   "title": "fix(reference): keep raw QK output for Attention mode 0 with softcap",
-   "url": "https://github.com/onnx/onnx/pull/8715",
-   "opened": "2026-10-31"
   }
  ],
  "repositories": [
