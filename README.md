@@ -38,11 +38,11 @@ My open-source project is CORTEX, an agent that runs entirely on your own machin
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/upstream-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/upstream-light.svg">
-    <img alt="50 pull requests merged into 10 open-source projects since October 3, 2026, with 22 more open: career-ops-hq/career-ops 30; langchain-ai/deepagents 6; promptfoo/promptfoo 5; StarTrail-org/PixelRAG 2; unslothai/unsloth 2; future-agi/future-agi 1; langfuse/langfuse 1; microsoft/PyRIT 1; open-webui/oikb 1; pydantic/pydantic-ai 1." src="assets/upstream-dark.svg" width="100%">
+    <img alt="51 pull requests merged into 10 open-source projects since October 3, 2026, with 20 more open: career-ops-hq/career-ops 31; langchain-ai/deepagents 6; promptfoo/promptfoo 5; StarTrail-org/PixelRAG 2; unslothai/unsloth 2; future-agi/future-agi 1; langfuse/langfuse 1; microsoft/PyRIT 1; open-webui/oikb 1; pydantic/pydantic-ai 1." src="assets/upstream-dark.svg" width="100%">
   </picture>
 </a>
 
-<sub>Refreshed daily from the GitHub search API by <a href=".github/workflows/readme-sync.yml">readme-sync</a>. Counts as of 2026-11-26; the chart links to the live list of every merged pull request.</sub>
+<sub>Refreshed daily from the GitHub search API by <a href=".github/workflows/readme-sync.yml">readme-sync</a>. Counts as of 2026-11-27; the chart links to the live list of every merged pull request.</sub>
 <!-- upstream:end -->
 
 <a href="https://roydonsequeira.com">
@@ -113,7 +113,7 @@ cd ui && npm install && npm run dev                   # UI on :3000
 <!-- recent-repos:start -->
 | Project | What it is | Last push |
 | --- | --- | --- |
-| [CORTEX-Private-Intelligence-Framework](https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework)<br><sub>Python · 7 stars</sub> | Private, local-first AI agent: planning, sandboxed tools, four-tier memory, streaming UI and OpenTelemetry. Runs entirely on your machine with Ollama. | <code>2026-11-17</code> |
+| [CORTEX-Private-Intelligence-Framework](https://github.com/roydonsequeira/CORTEX-Private-Intelligence-Framework)<br><sub>Python · 7 stars</sub> | Private, local-first AI agent: planning, sandboxed tools, four-tier memory, streaming UI and OpenTelemetry. Runs entirely on your machine with Ollama. | <code>2026-11-26</code> |
 | [Skin-Lesion-Segmentation-in-TensorFlow-2.0](https://github.com/roydonsequeira/Skin-Lesion-Segmentation-in-TensorFlow-2.0)<br><sub>Python</sub> | Skin lesion segmentation on ISIC 2018 using U-Net (PyTorch) and ResU-Net (TensorFlow 2). Final year project. | <code>2026-10-18</code> |
 | [RagChatbot](https://github.com/roydonsequeira/RagChatbot)<br><sub>Python</sub> | Local RAG chatbot: Ollama LLM, ChromaDB vector store, OCR/PDF ingestion, Next.js UI | <code>2026-04-09</code> |
 | [clinicalNote-SOAP](https://github.com/roydonsequeira/clinicalNote-SOAP) | n8n workflows that turn clinical text or voice into structured SOAP notes with a local LLM | <code>2026-03-25</code> |

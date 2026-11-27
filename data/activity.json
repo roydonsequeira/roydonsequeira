@@ -1,17 +1,17 @@
 {
  "schema": 1,
  "about": "Public GitHub activity of github.com/roydonsequeira, written daily for Vaani on roydonsequeira.com. Dates are in India time (UTC+05:30).",
- "as_of": "2026-11-26",
- "generated_at": "2026-11-26T01:47Z",
+ "as_of": "2026-11-27",
+ "generated_at": "2026-11-27T01:44Z",
  "upstream": {
-  "merged": 50,
-  "open": 22,
+  "merged": 51,
+  "open": 20,
   "projects": 10,
   "since": "2026-10-03",
   "by_project": [
    {
     "repo": "career-ops-hq/career-ops",
-    "merged": 30
+    "merged": 31
    },
    {
     "repo": "langchain-ai/deepagents",
@@ -52,6 +52,18 @@
   ]
  },
  "days": [
+  {
+   "date": "2026-11-27",
+   "merged": [
+    {
+     "repo": "career-ops-hq/career-ops",
+     "title": "fix(application-answers): stop --read-draft at the archived posting",
+     "url": "https://github.com/career-ops-hq/career-ops/pull/7805"
+    }
+   ],
+   "opened": [],
+   "pushed": []
+  },
   {
    "date": "2026-11-25",
    "merged": [],
@@ -97,12 +109,6 @@
  ],
  "open_pull_requests": [
   {
-   "repo": "career-ops-hq/career-ops",
-   "title": "fix(application-answers): stop --read-draft at the archived posting",
-   "url": "https://github.com/career-ops-hq/career-ops/pull/7805",
-   "opened": "2026-11-25"
-  },
-  {
    "repo": "microsoft/PyRIT",
    "title": "FIX: Map dotted and over-long MCP tool names to valid tool names",
    "url": "https://github.com/microsoft/PyRIT/pull/4489",
@@ -134,15 +140,21 @@
   },
   {
    "repo": "pytorch/pytorch",
-   "title": "Use torch.finfo(dtype).eps as F.normalize's default eps",
-   "url": "https://github.com/pytorch/pytorch/pull/204410",
-   "opened": "2026-11-11"
-  },
-  {
-   "repo": "pytorch/pytorch",
    "title": "[checkpoint] Add register_determinism_check for custom determinism checks",
    "url": "https://github.com/pytorch/pytorch/pull/203194",
    "opened": "2026-11-03"
+  },
+  {
+   "repo": "onnx/onnx",
+   "title": "fix(reference): keep raw QK output for Attention mode 0 with softcap",
+   "url": "https://github.com/onnx/onnx/pull/8715",
+   "opened": "2026-10-31"
+  },
+  {
+   "repo": "agno-agi/agno",
+   "title": "fix: stop the background concurrency cache from keeping closed event loops alive",
+   "url": "https://github.com/agno-agi/agno/pull/11324",
+   "opened": "2026-10-27"
   }
  ],
  "repositories": [
@@ -152,7 +164,7 @@
    "description": "Private, local-first AI agent: planning, sandboxed tools, four-tier memory, streaming UI and OpenTelemetry. Runs entirely on your machine with Ollama.",
    "language": "Python",
    "stars": 7,
-   "pushed": "2026-11-17"
+   "pushed": "2026-11-26"
   },
   {
    "name": "Skin-Lesion-Segmentation-in-TensorFlow-2.0",
