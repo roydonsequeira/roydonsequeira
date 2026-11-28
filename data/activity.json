@@ -1,11 +1,11 @@
 {
  "schema": 1,
  "about": "Public GitHub activity of github.com/roydonsequeira, written daily for Vaani on roydonsequeira.com. Dates are in India time (UTC+05:30).",
- "as_of": "2026-11-27",
- "generated_at": "2026-11-27T01:44Z",
+ "as_of": "2026-11-28",
+ "generated_at": "2026-11-28T01:27Z",
  "upstream": {
   "merged": 51,
-  "open": 20,
+  "open": 21,
   "projects": 10,
   "since": "2026-10-03",
   "by_project": [
@@ -61,7 +61,13 @@
      "url": "https://github.com/career-ops-hq/career-ops/pull/7805"
     }
    ],
-   "opened": [],
+   "opened": [
+    {
+     "repo": "career-ops-hq/career-ops",
+     "title": "docs(workday): update the Cloudflare 429 note after the ALPN fix",
+     "url": "https://github.com/career-ops-hq/career-ops/pull/7906"
+    }
+   ],
    "pushed": []
   },
   {
@@ -93,21 +99,15 @@
     }
    ],
    "pushed": []
-  },
-  {
-   "date": "2026-11-21",
-   "merged": [],
-   "opened": [
-    {
-     "repo": "microsoft/PyRIT",
-     "title": "FIX: Map dotted and over-long MCP tool names to valid tool names",
-     "url": "https://github.com/microsoft/PyRIT/pull/4489"
-    }
-   ],
-   "pushed": []
   }
  ],
  "open_pull_requests": [
+  {
+   "repo": "career-ops-hq/career-ops",
+   "title": "docs(workday): update the Cloudflare 429 note after the ALPN fix",
+   "url": "https://github.com/career-ops-hq/career-ops/pull/7906",
+   "opened": "2026-11-27"
+  },
   {
    "repo": "microsoft/PyRIT",
    "title": "FIX: Map dotted and over-long MCP tool names to valid tool names",
@@ -149,12 +149,6 @@
    "title": "fix(reference): keep raw QK output for Attention mode 0 with softcap",
    "url": "https://github.com/onnx/onnx/pull/8715",
    "opened": "2026-10-31"
-  },
-  {
-   "repo": "agno-agi/agno",
-   "title": "fix: stop the background concurrency cache from keeping closed event loops alive",
-   "url": "https://github.com/agno-agi/agno/pull/11324",
-   "opened": "2026-10-27"
   }
  ],
  "repositories": [
